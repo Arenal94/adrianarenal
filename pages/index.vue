@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { mapMutations, mapGetters } from 'vuex'
-import { GENERAL_CONSTS } from '~/models/store/common/general.consts'
+import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
 export default {
   layout({ app }) {
