@@ -1,73 +1,44 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="container__title">
-        adrianarenal
-      </h1>
-      <h2 class="subtitle">
-        My personal website with NuxtJs
-      </h2>
-      <div class="links">
-        <a class="button--green" href="https://nuxtjs.org/" target="_blank">
-          Documentation {{ test }}
-        </a>
-        <a
-          class="button--grey"
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div class="content">
+    <span @click="setSelectedLayout('default')">Default </span>
+    <span @click="setSelectedLayout('developer')">Developer </span>
   </div>
 </template>
 
 <script lang="ts">
-import Logo from '~/components/Logo.vue'
+import { mapMutations, mapGetters } from 'vuex'
+import { GENERAL_CONSTS } from '~/models/store/common/general.consts'
 
 export default {
-  components: {
-    Logo
+  layout({ app }) {
+    return app.store.getters[GENERAL_CONSTS.getters.selectedLayout]
   },
   computed: {
-    test(): number {
-      return 2
+    ...mapGetters({
+      selectedLayout: GENERAL_CONSTS.getters.selectedLayout
+    })
+  },
+  watch: {
+    selectedLayout() {
+      window.$nuxt.setLayout(this.selectedLayout)
     }
+  },
+  methods: {
+    ...mapMutations({
+      setSelectedLayout: GENERAL_CONSTS.mutations.setSelectedLayout
+    })
   }
 }
 </script>
 
-<style lang="scss">
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+<style lang="scss" scoped>
+.content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  &__title {
-    font-family: 'Quicksand', 'Source Sans Pro', -apple-system,
-      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-      sans-serif;
-    display: block;
-    font-weight: 300;
-    font-size: $font-size--extra-large;
-    letter-spacing: 1px;
-  }
+  flex-direction: column;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.test {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 </style>

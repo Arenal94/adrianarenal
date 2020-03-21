@@ -1,16 +1,17 @@
 <template>
-  <div class="default">
+  <div class="developer">
     <nuxt />
   </div>
 </template>
-<script lang="ts">
+<script>
 export default {
-  name: 'default'
+  name: 'developer'
 }
 </script>
+
 <style lang="scss" scoped>
-.default {
+.developer {
   min-height: 100vh;
-  background-color: green;
+  background-color: red;
 }
 </style>
