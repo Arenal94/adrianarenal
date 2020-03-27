@@ -9,8 +9,8 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import 'assets/scss/default';
 .default {
   min-height: 100vh;
-  background-color: green;
 }
 </style>
