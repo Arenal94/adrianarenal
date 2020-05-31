@@ -1,7 +1,24 @@
 <template>
   <div class="content">
-    <span @click="setSelectedLayout('default')">Default </span>
-    <span @click="setSelectedLayout('developer')">Developer </span>
+    <ul class="content__layout-list">
+      <li
+        class="content__layout-item"
+        v-for="layout in Object.values(LayoutEnum)"
+        @click="setSelectedLayout(layout)"
+      >
+        {{ layout }}
+      </li>
+    </ul>
+    <ul class="content__section-list">
+      <li
+        class="content__section-item"
+        v-for="section in Object.values(SectionEnum)"
+        @click="setCurrentSection(section)"
+      >
+        {{ section }}
+      </li>
+    </ul>
+
     <h1>h1 title</h1>
     <h2>h2 title</h2>
     <h3>h3 title</h3>
@@ -50,6 +67,8 @@
 <script lang="ts">
 import { mapMutations, mapGetters } from 'vuex'
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
+import { LayoutEnum } from '~/enums/theme.enum'
+import { SectionEnum } from '~/enums/section.enum'
 
 export default {
   layout({ app }) {
@@ -60,6 +79,12 @@ export default {
       selectedLayout: GENERAL_CONSTS.getters.selectedLayout
     })
   },
+  data() {
+    return {
+      LayoutEnum,
+      SectionEnum
+    }
+  },
   watch: {
     selectedLayout() {
       window.$nuxt.setLayout(this.selectedLayout)
@@ -67,7 +92,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setSelectedLayout: GENERAL_CONSTS.mutations.setSelectedLayout
+      setSelectedLayout: GENERAL_CONSTS.mutations.setSelectedLayout,
+      setCurrentSection: GENERAL_CONSTS.mutations.setCurrentSection
     })
   }
 }

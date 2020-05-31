@@ -1,11 +1,10 @@
 export const GENERAL_CONSTS = {
   getters: {
-    selectedLayout: 'selectedLayout'
+    selectedLayout: 'selectedLayout',
+    currentSection: 'currentSection'
   },
   mutations: {
-    setSelectedLayout: 'setSelectedLayout'
-  },
-  storage: {
-    selectedLayout: 'selectedLayout'
+    setSelectedLayout: 'setSelectedLayout',
+    setCurrentSection: 'setCurrentSection'
   }
 }
