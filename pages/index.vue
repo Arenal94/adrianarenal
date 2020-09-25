@@ -4,7 +4,7 @@
       <li
         class="content__layout-item"
         v-for="layout in Object.values(LayoutEnum)"
-        @click="setSelectedLayout(layout)"
+        @click="setLayout(layout)"
       >
         {{ layout }}
       </li>
@@ -13,13 +13,27 @@
       <li
         class="content__section-item"
         v-for="section in Object.values(SectionEnum)"
-        @click="setCurrentSection(section)"
+        @click="setContentSection(section)"
       >
         {{ section }}
       </li>
     </ul>
-
-    <h1>h1 title</h1>
+    <section v-if="isContentSectionVisible(SectionEnum.MAIN)">
+      <h1>main title</h1>
+      Estamos en la seccion de main
+    </section>
+    <section v-if="isContentSectionVisible(SectionEnum.WORK)">
+      <h1>work title</h1>
+      Estamos en la seccion de work
+    </section>
+    <section v-if="isContentSectionVisible(SectionEnum.STUDIES)">
+      <h1>studies title</h1>
+      Estamos en la seccion de studies
+    </section>
+    <section v-if="isContentSectionVisible(SectionEnum.HOBBIES)">
+      <h1>hobbies title</h1>
+      Estamos en la seccion de hobbies
+    </section>
     <h2>h2 title</h2>
     <h3>h3 title</h3>
     <h4>h4 title</h4>
@@ -67,34 +81,41 @@
 <script lang="ts">
 import { mapMutations, mapGetters } from 'vuex'
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
-import { LayoutEnum } from '~/enums/theme.enum'
-import { SectionEnum } from '~/enums/section.enum'
+import { LayoutEnum } from '~/enums/layout.enum'
+import { ContentSectionEnum } from '~/enums/content-section.enum'
 
 export default {
   layout({ app }) {
-    return app.store.getters[GENERAL_CONSTS.getters.selectedLayout]
+    return app.store.getters[GENERAL_CONSTS.getters.layout]
   },
   computed: {
     ...mapGetters({
-      selectedLayout: GENERAL_CONSTS.getters.selectedLayout
+      layout: GENERAL_CONSTS.getters.layout,
+      contentSection: GENERAL_CONSTS.getters.contentSection
     })
   },
   data() {
     return {
       LayoutEnum,
-      SectionEnum
+      SectionEnum: ContentSectionEnum
     }
   },
   watch: {
-    selectedLayout() {
-      window.$nuxt.setLayout(this.selectedLayout)
+    layout() {
+      window.$nuxt.setLayout(this.layout)
     }
   },
   methods: {
     ...mapMutations({
-      setSelectedLayout: GENERAL_CONSTS.mutations.setSelectedLayout,
-      setCurrentSection: GENERAL_CONSTS.mutations.setCurrentSection
-    })
+      setLayout: GENERAL_CONSTS.mutations.setLayout,
+      setContentSection: GENERAL_CONSTS.mutations.setContentSection
+    }),
+    isContentSectionVisible(contentSection: ContentSectionEnum): boolean {
+      return (
+        this.layout === LayoutEnum.DEFAULT ||
+        this.contentSection === contentSection
+      )
+    }
   }
 }
 </script>

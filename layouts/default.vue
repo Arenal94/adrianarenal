@@ -1,7 +1,7 @@
 <template>
-  <div class="default">
+  <div class="default-layout">
     <nuxt />
-    <character class="default__character" />
+    <character class="default-layout__character" />
   </div>
 </template>
 <script lang="ts">
@@ -13,7 +13,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import 'assets/scss/default';
-.default {
+.default-layout {
   min-height: 100vh;
   &__character {
     max-height: rem(500px);

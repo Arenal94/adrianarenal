@@ -1,4 +1,4 @@
 export interface GeneralState {
-  selectedLayout: string
-  currentSection: string
+  layout: string
+  contentSection: string
 }

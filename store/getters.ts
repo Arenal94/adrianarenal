@@ -1,10 +1,10 @@
 import { GeneralState } from '~/models/store/general/general-state'
 
 export default {
-  selectedLayout(state: GeneralState) {
-    return state.selectedLayout
+  layout(state: GeneralState) {
+    return state.layout
   },
-  currentSection(state: GeneralState) {
-    return state.currentSection
+  contentSection(state: GeneralState) {
+    return state.contentSection
   }
 }

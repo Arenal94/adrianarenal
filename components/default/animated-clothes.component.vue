@@ -10,7 +10,7 @@
       v-for="(item, index) in clothes"
       class="animated-clothes__item"
       :is="item.component"
-      :key="`${currentSection}__${index}`"
+      :key="`${contentSection}__${index}`"
       :data-index="item.index"
     />
   </transition-group>
@@ -33,7 +33,7 @@ import {
   WorkShoes,
   TShirt
 } from '~/components/default/clothes'
-import { SectionEnum } from '~/enums/section.enum'
+import { ContentSectionEnum } from '~/enums/content-section.enum'
 
 export default {
   name: 'animated-clothes',
@@ -53,11 +53,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      currentSection: GENERAL_CONSTS.getters.currentSection
+      contentSection: GENERAL_CONSTS.getters.contentSection
     }),
     clothes: function() {
       return {
-        [SectionEnum.MAIN]: () => [
+        [ContentSectionEnum.MAIN]: () => [
           {
             component: 'jeans',
             index: 1
@@ -71,7 +71,7 @@ export default {
             index: 2
           }
         ],
-        [SectionEnum.STUDIES]: () => [
+        [ContentSectionEnum.STUDIES]: () => [
           {
             component: 'elegant-shoes',
             index: 0
@@ -85,7 +85,7 @@ export default {
             index: 2
           }
         ],
-        [SectionEnum.HOBBIES]: () => [
+        [ContentSectionEnum.HOBBIES]: () => [
           {
             component: 'sport-shoes',
             index: 0
@@ -99,7 +99,7 @@ export default {
             index: 2
           }
         ],
-        [SectionEnum.WORK]: () => [
+        [ContentSectionEnum.WORK]: () => [
           {
             component: 'work-jeans',
             index: 1
@@ -113,31 +113,31 @@ export default {
             index: 2
           }
         ]
-      }[this.currentSection]()
+      }[this.contentSection]()
     },
     topItem: function(): string {
       return {
-        [SectionEnum.MAIN]: () => 'shirt',
-        [SectionEnum.STUDIES]: () => 'mortarboard',
-        [SectionEnum.HOBBIES]: () => 'boxing-gloves',
-        [SectionEnum.WORK]: () => 'shirt'
-      }[this.currentSection]()
+        [ContentSectionEnum.MAIN]: () => 'shirt',
+        [ContentSectionEnum.STUDIES]: () => 'mortarboard',
+        [ContentSectionEnum.HOBBIES]: () => 'boxing-gloves',
+        [ContentSectionEnum.WORK]: () => 'shirt'
+      }[this.contentSection]()
     },
     middleItem: function(): string {
       return {
-        [SectionEnum.MAIN]: () => 'jeans',
-        [SectionEnum.STUDIES]: () => 'toga',
-        [SectionEnum.HOBBIES]: () => 'sport-shorts',
-        [SectionEnum.WORK]: () => 'jeans'
-      }[this.currentSection]()
+        [ContentSectionEnum.MAIN]: () => 'jeans',
+        [ContentSectionEnum.STUDIES]: () => 'toga',
+        [ContentSectionEnum.HOBBIES]: () => 'sport-shorts',
+        [ContentSectionEnum.WORK]: () => 'jeans'
+      }[this.contentSection]()
     },
     bottomItem: function(): string {
       return {
-        [SectionEnum.MAIN]: () => 'sneakers',
-        [SectionEnum.STUDIES]: () => 'elegant-shoes',
-        [SectionEnum.HOBBIES]: () => 'sport-shoes',
-        [SectionEnum.WORK]: () => 'sneakers'
-      }[this.currentSection]()
+        [ContentSectionEnum.MAIN]: () => 'sneakers',
+        [ContentSectionEnum.STUDIES]: () => 'elegant-shoes',
+        [ContentSectionEnum.HOBBIES]: () => 'sport-shoes',
+        [ContentSectionEnum.WORK]: () => 'sneakers'
+      }[this.contentSection]()
     }
   },
   methods: {
