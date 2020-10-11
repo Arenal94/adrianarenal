@@ -23,7 +23,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['@/assets/scss/reset.scss', '@/assets/scss/default.scss'],
+  css: [
+    '@/assets/scss/reset.scss',
+    '@/assets/scss/resources.scss',
+    '@/assets/scss/scroll.scss',
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -44,6 +48,7 @@ export default {
     scss: [
       './assets/scss/abstracts/_functions.scss',
       './assets/scss/vars/*.scss',
+      './assets/scss/abstracts/_animations.scss',
       './assets/scss/abstracts/_mixins.scss'
     ]
   },

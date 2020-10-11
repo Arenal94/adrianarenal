@@ -1,0 +1,33 @@
+$scrollbar-size: rem(13px);
+
+.scroll,
+.scroll--x,
+.scroll--y {
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    height: $scrollbar-size;
+    width: $scrollbar-size;
+
+    &-track {
+      background-color: $grey--4;
+    }
+    &-thumb {
+      background-color: $grey--3;
+      border-radius: 15px;
+      border: 0.5px solid $grey--8;
+    }
+  }
+}
+
+.scroll {
+  overflow: auto;
+}
+
+.scroll--x {
+  overflow-x: auto;
+}
+
+.scroll--y {
+  overflow-y: auto;
+}
