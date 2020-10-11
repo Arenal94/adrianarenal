@@ -1,4 +1,4 @@
-export enum SectionEnum {
+export enum ContentSectionEnum {
   MAIN = 'main',
   WORK = 'work',
   STUDIES = 'studies',

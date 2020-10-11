@@ -1,8 +1,8 @@
-import { LayoutEnum } from '~/enums/theme.enum'
+import { ThemeEnum } from '~/enums/theme.enum'
 import { GeneralState } from '~/models/store/general/general-state'
-import { SectionEnum } from '~/enums/section.enum'
+import { ContentSectionEnum } from '~/enums/content-section.enum'
 
 export const state = (): GeneralState => ({
-  selectedLayout: LayoutEnum.DEFAULT,
-  currentSection: SectionEnum.MAIN
+  theme: ThemeEnum.DESIGNER,
+  contentSection: ContentSectionEnum.MAIN
 })

@@ -1,4 +1,4 @@
-export enum LayoutEnum {
-  DEFAULT = 'default',
+export enum ThemeEnum {
+  DESIGNER = 'designer',
   DEVELOPER = 'developer'
 }
