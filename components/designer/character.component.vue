@@ -292,7 +292,7 @@
 </template>
 
 <script>
-import AnimatedClothes from '~/components/default/animated-clothes.component'
+import AnimatedClothes from '~/components/designer/animated-clothes.component'
 export default {
   name: 'character',
   components: { AnimatedClothes }

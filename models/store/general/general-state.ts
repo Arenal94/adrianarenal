@@ -1,4 +1,4 @@
 export interface GeneralState {
-  layout: string
+  theme: string
   contentSection: string
 }

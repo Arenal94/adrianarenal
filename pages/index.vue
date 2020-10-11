@@ -1,14 +1,5 @@
 <template>
   <div class="content">
-    <ul class="content__layout-list">
-      <li
-        class="content__layout-item"
-        v-for="layout in Object.values(LayoutEnum)"
-        @click="setLayout(layout)"
-      >
-        {{ layout }}
-      </li>
-    </ul>
     <ul class="content__section-list">
       <li
         class="content__section-item"
@@ -80,39 +71,39 @@
 
 <script lang="ts">
 import { mapMutations, mapGetters } from 'vuex'
+
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
-import { LayoutEnum } from '~/enums/layout.enum'
-import { ContentSectionEnum } from '~/enums/content-section.enum'
+
+import { ContentSectionEnum, ThemeEnum } from '~/enums'
 
 export default {
   layout({ app }) {
-    return app.store.getters[GENERAL_CONSTS.getters.layout]
+    return app.store.getters[GENERAL_CONSTS.getters.theme]
   },
   computed: {
     ...mapGetters({
-      layout: GENERAL_CONSTS.getters.layout,
+      theme: GENERAL_CONSTS.getters.theme,
       contentSection: GENERAL_CONSTS.getters.contentSection
     })
   },
   data() {
     return {
-      LayoutEnum,
       SectionEnum: ContentSectionEnum
     }
   },
   watch: {
-    layout() {
-      window.$nuxt.setLayout(this.layout)
+    theme() {
+      window.$nuxt.setLayout(this.theme)
     }
   },
   methods: {
     ...mapMutations({
-      setLayout: GENERAL_CONSTS.mutations.setLayout,
+      setTheme: GENERAL_CONSTS.mutations.setTheme,
       setContentSection: GENERAL_CONSTS.mutations.setContentSection
     }),
     isContentSectionVisible(contentSection: ContentSectionEnum): boolean {
       return (
-        this.layout === LayoutEnum.DEFAULT ||
+        this.theme === ThemeEnum.DESIGNER ||
         this.contentSection === contentSection
       )
     }

@@ -19,20 +19,22 @@
 <script lang="ts">
 import { mapGetters } from 'vuex'
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
-import {
-  Sneakers,
-  Shirt,
-  Mortarboard,
-  BoxingGloves,
-  SportShoes,
-  ElegantShoes,
-  Jeans,
-  SportShorts,
-  Toga,
-  WorkJeans,
-  WorkShoes,
-  TShirt
-} from '~/components/default/clothes'
+
+import ElegantShoes from './clothes/bottom/elegant-shoes.component.vue'
+import Sneakers from './clothes/bottom/sneakers.component.vue'
+import SportShoes from './clothes/bottom/sport-shoes.component.vue'
+import WorkShoes from './clothes/bottom/work-shoes.component.vue'
+
+import Jeans from './clothes/middle/jeans.component.vue'
+import SportShorts from './clothes/middle/sport-shorts.component.vue'
+import Toga from './clothes/middle/toga.component.vue'
+import WorkJeans from './clothes/middle/work-jeans.component.vue'
+
+import BoxingGloves from './clothes/top/boxing-gloves.component.vue'
+import Mortarboard from './clothes/top/mortarboard.component.vue'
+import Shirt from './clothes/top/shirt.component.vue'
+import TShirt from './clothes/top/t-shirt.component.vue'
+
 import { ContentSectionEnum } from '~/enums/content-section.enum'
 
 export default {
@@ -113,30 +115,6 @@ export default {
             index: 2
           }
         ]
-      }[this.contentSection]()
-    },
-    topItem: function(): string {
-      return {
-        [ContentSectionEnum.MAIN]: () => 'shirt',
-        [ContentSectionEnum.STUDIES]: () => 'mortarboard',
-        [ContentSectionEnum.HOBBIES]: () => 'boxing-gloves',
-        [ContentSectionEnum.WORK]: () => 'shirt'
-      }[this.contentSection]()
-    },
-    middleItem: function(): string {
-      return {
-        [ContentSectionEnum.MAIN]: () => 'jeans',
-        [ContentSectionEnum.STUDIES]: () => 'toga',
-        [ContentSectionEnum.HOBBIES]: () => 'sport-shorts',
-        [ContentSectionEnum.WORK]: () => 'jeans'
-      }[this.contentSection]()
-    },
-    bottomItem: function(): string {
-      return {
-        [ContentSectionEnum.MAIN]: () => 'sneakers',
-        [ContentSectionEnum.STUDIES]: () => 'elegant-shoes',
-        [ContentSectionEnum.HOBBIES]: () => 'sport-shoes',
-        [ContentSectionEnum.WORK]: () => 'sneakers'
       }[this.contentSection]()
     }
   },

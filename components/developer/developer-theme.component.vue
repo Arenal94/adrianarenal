@@ -1,53 +1,53 @@
 <template>
-  <div class="developer-layout">
-    <header class="developer-layout__header">
-      <ul class="developer-layout__header-breadcumb">
-        <li class="developer-layout__header-breadcumb-item">
-          <p class="developer-layout__text developer-layout__text--breadcumb">
+  <section class="developer-theme">
+    <header class="developer-theme__header">
+      <ul class="developer-theme__header-breadcumb">
+        <li class="developer-theme__header-breadcumb-item">
+          <p class="developer-theme__text developer-theme__text--breadcumb">
             <span>icon</span>adrianarenal
           </p>
         </li>
       </ul>
     </header>
-    <main class="developer-layout__content">
+    <main class="developer-theme__content">
       <nuxt />
     </main>
-    <nav class="developer-layout__project-tools-bar">
+    <nav class="developer-theme__project-tools-bar">
       <div>
         <p><span>carpeta</span> 1: Project</p>
       </div>
     </nav>
-    <aside class="developer-layout__project scroll">
+    <aside class="developer-theme__project scroll">
       <p>
         sadadsadasddsadsadsddasadsasdasasdasasdadsadsassdbdsakdsadbaasdsadsadsdadssaddsadsadsadsadsaadsdasdsasad
       </p>
     </aside>
-    <section class="developer-layout__tools">
-      <header class="developer-layout__tools-header">
+    <section class="developer-theme__tools">
+      <header class="developer-theme__tools-header">
         <p>Selected tab name:</p>
-        <ul class="developer-layout__tools-tabs">
+        <ul class="developer-theme__tools-tabs">
           <li>local <span>X</span></li>
         </ul>
       </header>
-      <main class="developer-layout__tools-content"></main>
+      <main class="developer-theme__tools-content"></main>
     </section>
-    <nav class="developer-layout__tools-bar">
+    <nav class="developer-theme__tools-bar">
       Tools bar
     </nav>
-    <footer class="developer-layout__footer">
+    <footer class="developer-theme__footer">
       <p>this is the footer</p>
     </footer>
-  </div>
+  </section>
 </template>
-<script>
+<script lang="ts">
 export default {
-  name: 'developer'
+  name: 'developer-theme'
 }
 </script>
 
 <style lang="scss" scoped>
 @import 'assets/scss/developer';
-.developer-layout {
+.developer-theme {
   display: grid;
   grid-template-areas:
     'header header header header'

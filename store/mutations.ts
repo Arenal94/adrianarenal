@@ -1,12 +1,12 @@
 import { GeneralState } from '~/models/store/general/general-state'
-import { LayoutEnum } from '~/enums/layout.enum'
+import { ThemeEnum } from '~/enums/theme.enum'
 import { ContentSectionEnum } from '~/enums/content-section.enum'
 
 export default {
-  setLayout(state: GeneralState, theme: LayoutEnum) {
-    state.layout = theme
+  setTheme(state: GeneralState, theme: ThemeEnum) {
+    state.theme = theme
   },
-  setContentSection(state: GeneralState, section: ContentSectionEnum) {
-    state.contentSection = section
+  setContentSection(state: GeneralState, contentSection: ContentSectionEnum) {
+    state.contentSection = contentSection
   }
 }

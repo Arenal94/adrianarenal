@@ -1,10 +1,10 @@
 export const GENERAL_CONSTS = {
   getters: {
-    layout: 'layout',
+    theme: 'theme',
     contentSection: 'contentSection'
   },
   mutations: {
-    setLayout: 'setLayout',
+    setTheme: 'setTheme',
     setContentSection: 'setContentSection'
   }
 }
