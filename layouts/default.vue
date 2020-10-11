@@ -44,6 +44,8 @@ export default {
 <style lang="scss" scoped>
 .default-layout {
   $component-class: &;
+  display: flex;
+  height: 100vh;
   overflow: hidden;
 
   &__theme-switch {

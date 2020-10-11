@@ -1,14 +1,5 @@
 <template>
   <div class="content">
-    <ul class="content__section-list">
-      <li
-        class="content__section-item"
-        v-for="section in Object.values(SectionEnum)"
-        @click="setContentSection(section)"
-      >
-        {{ section }}
-      </li>
-    </ul>
     <section v-if="isContentSectionVisible(SectionEnum.MAIN)">
       <h1>main title</h1>
       Estamos en la seccion de main
@@ -70,7 +61,7 @@
 </template>
 
 <script lang="ts">
-import { mapMutations, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
@@ -97,10 +88,6 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      setTheme: GENERAL_CONSTS.mutations.setTheme,
-      setContentSection: GENERAL_CONSTS.mutations.setContentSection
-    }),
     isContentSectionVisible(contentSection: ContentSectionEnum): boolean {
       return (
         this.theme === ThemeEnum.DESIGNER ||
@@ -115,10 +102,5 @@ export default {
 .content {
   display: flex;
   flex-direction: column;
-}
-
-.test {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
 </style>
