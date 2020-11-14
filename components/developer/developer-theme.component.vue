@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import 'assets/scss/developer';
+@import 'assets/scss/developer/styles';
 .developer-theme {
   display: grid;
   grid-template-areas:

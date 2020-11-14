@@ -1,6 +1,5 @@
 <template>
   <div class="default-layout">
-    <theme-switch class="default-layout__theme-switch" />
     <transition name="default-layout__theme--animated" mode="out-in">
       <component
         class="default-layout__theme"
@@ -8,6 +7,7 @@
         :class="`default-layout__theme--${theme}`"
       />
     </transition>
+    <theme-switch class="default-layout__theme-switch" />
   </div>
 </template>
 <script lang="ts">

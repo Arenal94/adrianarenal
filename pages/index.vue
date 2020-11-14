@@ -1,27 +1,30 @@
 <template>
   <div class="content">
-    <ul class="content__section-list">
-      <li
-        class="content__section-item"
-        v-for="section in Object.values(SectionEnum)"
-        @click="setContentSection(section)"
-      >
-        {{ section }}
-      </li>
-    </ul>
-    <section v-if="isContentSectionVisible(SectionEnum.MAIN)">
+    <section
+      class="content__section content__section--main"
+      v-if="isContentSectionVisible(SectionEnum.MAIN)"
+    >
       <h1>main title</h1>
       Estamos en la seccion de main
     </section>
-    <section v-if="isContentSectionVisible(SectionEnum.WORK)">
+    <section
+      class="content__section content__section--work"
+      v-if="isContentSectionVisible(SectionEnum.WORK)"
+    >
       <h1>work title</h1>
       Estamos en la seccion de work
     </section>
-    <section v-if="isContentSectionVisible(SectionEnum.STUDIES)">
+    <section
+      class="content__section content__section--studies"
+      v-if="isContentSectionVisible(SectionEnum.STUDIES)"
+    >
       <h1>studies title</h1>
       Estamos en la seccion de studies
     </section>
-    <section v-if="isContentSectionVisible(SectionEnum.HOBBIES)">
+    <section
+      class="content__section content__section--hobbies"
+      v-if="isContentSectionVisible(SectionEnum.HOBBIES)"
+    >
       <h1>hobbies title</h1>
       Estamos en la seccion de hobbies
     </section>
@@ -70,7 +73,7 @@
 </template>
 
 <script lang="ts">
-import { mapMutations, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
@@ -97,10 +100,6 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      setTheme: GENERAL_CONSTS.mutations.setTheme,
-      setContentSection: GENERAL_CONSTS.mutations.setContentSection
-    }),
     isContentSectionVisible(contentSection: ContentSectionEnum): boolean {
       return (
         this.theme === ThemeEnum.DESIGNER ||
@@ -115,10 +114,9 @@ export default {
 .content {
   display: flex;
   flex-direction: column;
-}
 
-.test {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  &__section {
+    min-height: 100%;
+  }
 }
 </style>
