@@ -85,8 +85,8 @@ export default {
     align-items: center;
     flex-basis: 50%;
     height: 100%;
-    font-size: $font-size--extra-large;
-    color: $color--grey;
+    font-size: rem(30px);
+    color: #a6b0b5;
     z-index: 1;
     transition: color $transitions-duration;
     &--selected {
@@ -99,7 +99,7 @@ export default {
     width: 50%;
     height: 80%;
     border-radius: rem(20px);
-    background-color: $color--dark-grey-blue;
+    background-color: #243d48;
     transition: transform $transitions-duration;
     &--selected {
       transform: translate3d(100%, 0, 0);
