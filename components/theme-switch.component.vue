@@ -4,19 +4,19 @@
       <label
         class="theme-switch__label"
         for="theme-switch-input"
-        :class="{ 'theme-switch__label--selected': selected }"
+        :class="{ 'theme-switch__label--selected': isDeveloperTheme }"
       />
       <span
-        class="theme-switch__option theme-switch__option--left adricon"
-        :class="{ 'theme-switch__option--selected': !selected }"
-      >
-        developer
-      </span>
-      <span
-        class="theme-switch__option theme-switch__option--right adricon"
-        :class="{ 'theme-switch__option--selected': selected }"
+        class="theme-switch__option theme-switch__option--designer adricon"
+        :class="{ 'theme-switch__option--selected': !isDeveloperTheme }"
       >
         designer
+      </span>
+      <span
+        class="theme-switch__option theme-switch__option--developer adricon"
+        :class="{ 'theme-switch__option--selected': isDeveloperTheme }"
+      >
+        developer
       </span>
       <input
         class="theme-switch__input"
@@ -33,30 +33,27 @@ import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
 import { ThemeEnum } from '~/enums'
 
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'theme-switch',
-  data: function() {
-    return {
-      selected: false
+  computed: {
+    ...mapGetters({
+      theme: GENERAL_CONSTS.getters.theme
+    }),
+    isDeveloperTheme: function(): boolean {
+      return this.theme === ThemeEnum.DEVELOPER
     }
   },
   methods: {
     ...mapMutations({
       setTheme: GENERAL_CONSTS.mutations.setTheme
     }),
-    inputChange(inputValue) {
-      this.selected = inputValue.target.checked
-    }
-  },
-  watch: {
-    selected: function(selected) {
-      if (selected) {
-        this.setTheme(ThemeEnum.DESIGNER)
-      } else {
-        this.setTheme(ThemeEnum.DEVELOPER)
-      }
+    inputChange(inputValue): void {
+      const selectedTheme = inputValue.target.checked
+        ? ThemeEnum.DEVELOPER
+        : ThemeEnum.DESIGNER
+      this.setTheme(selectedTheme)
     }
   }
 }
@@ -67,7 +64,7 @@ export default {
   $component-class: &;
   display: flex;
   align-items: center;
-  width: rem(90px);
+  width: rem(110px);
   height: rem(60px);
   padding: rem(5px);
   background-color: rgba(255, 255, 255, 0.2);
