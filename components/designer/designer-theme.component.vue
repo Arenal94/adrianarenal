@@ -78,13 +78,15 @@ $footer-height: rem(60px);
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: $color--white;
 
   &__header {
     position: absolute;
     top: 0;
     height: $header-height;
     width: 100%;
-    background-color: $color--pale-teal;
+    background-color: $secondary-color;
+    color: $on-secondary-color;
   }
 
   &__character {
@@ -121,7 +123,8 @@ $footer-height: rem(60px);
   &__footer {
     position: absolute;
     bottom: 0;
-    background-color: orangered;
+    background-color: $primary-color;
+    color: $on-primary-color;
     width: 100%;
     height: 60px;
   }
