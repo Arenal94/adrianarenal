@@ -6,20 +6,7 @@
     <main class="designer-theme__main-content">
       <character class="designer-theme__character" />
       <nuxt class="designer-theme__sections-container scroll--y" />
-      <ul class="designer-theme__section-list">
-        <li
-          class="designer-theme__section-list-item"
-          v-for="contentSection in Object.values(ContentSectionEnum)"
-          :class="{
-            'designer-theme__section-item--selected': isContentSectionSelected(
-              contentSection
-            )
-          }"
-          @click="setContentSection(contentSection)"
-        >
-          {{ getContentSectionLabel(contentSection) }}
-        </li>
-      </ul>
+      <designer-section-list class="designer-theme__section-list" />
     </main>
     <footer class="designer-theme__footer">
       footer
@@ -27,49 +14,18 @@
   </section>
 </template>
 <script lang="ts">
-import { mapMutations, mapGetters } from 'vuex'
-
 import Character from '~/components/designer/character.component.vue'
-
-import { ContentSectionEnum } from '~/enums'
-
-import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
+import DesignerSectionList from '~/components/designer/designer-section-list.vue'
 
 export default {
   name: 'designer-theme',
   components: {
-    Character
-  },
-  computed: {
-    ...mapGetters({
-      contentSection: GENERAL_CONSTS.getters.contentSection
-    })
-  },
-  data() {
-    return {
-      ContentSectionEnum
-    }
-  },
-  methods: {
-    ...mapMutations({
-      setTheme: GENERAL_CONSTS.mutations.setTheme,
-      setContentSection: GENERAL_CONSTS.mutations.setContentSection
-    }),
-    isContentSectionSelected: function(section: ContentSectionEnum): boolean {
-      return this.contentSection === section
-    },
-    getContentSectionLabel: function(section: ContentSectionEnum): string {
-      return {
-        [ContentSectionEnum.MAIN]: () => 'Intro',
-        [ContentSectionEnum.WORK]: () => 'Work',
-        [ContentSectionEnum.STUDIES]: () => 'Studies',
-        [ContentSectionEnum.HOBBIES]: () => 'Hobbies'
-      }[section]()
-    }
+    Character,
+    DesignerSectionList
   }
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 @import 'assets/scss/designer/styles';
 $header-height: rem(100px);
 $footer-height: rem(60px);
@@ -78,7 +34,10 @@ $footer-height: rem(60px);
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: $color--white;
+  color: $primary-color;
+  background-color: $on-primary-color;
+  font-family: $font-family--primary;
+  font-size: $font-size--extra-small;
 
   &__header {
     position: absolute;
@@ -105,19 +64,9 @@ $footer-height: rem(60px);
   }
 
   &__section-list {
-    display: flex;
-    flex-direction: column;
     flex-basis: 25%;
     flex-shrink: 0;
     align-self: center;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-
-  &__section-list-item {
-    font-size: $font-size--extra-large;
-    text-transform: uppercase;
   }
 
   &__footer {
