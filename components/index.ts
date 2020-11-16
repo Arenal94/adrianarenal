@@ -1,4 +1,5 @@
 export { default as DesignerTheme } from './designer/designer-theme.component.vue'
+export { default as DesignerSectionList } from './designer/designer-section-list.vue'
 export { default as Character } from './designer/character.component.vue'
 export { default as AnimatedClothes } from './designer/animated-clothes.component.vue'
 

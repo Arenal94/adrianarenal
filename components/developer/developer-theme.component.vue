@@ -58,6 +58,10 @@ export default {
   grid-auto-rows: rem(30px) auto auto rem(30px) rem(30px);
   grid-auto-columns: rem(30px) auto auto auto;
   min-height: 100vh;
+  font-family: $font-family--primary;
+  font-size: $font-size--extra-small;
+  color: $primary-color;
+  background-color: $on-primary-color;
 
   &__header {
     grid-area: header;

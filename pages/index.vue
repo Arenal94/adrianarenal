@@ -4,28 +4,28 @@
       class="content__section content__section--main"
       v-if="isContentSectionVisible(SectionEnum.MAIN)"
     >
-      <h1>main title</h1>
+      <h2>main title</h2>
       Estamos en la seccion de main
     </section>
     <section
       class="content__section content__section--work"
       v-if="isContentSectionVisible(SectionEnum.WORK)"
     >
-      <h1>work title</h1>
+      <h2>work title</h2>
       Estamos en la seccion de work
     </section>
     <section
       class="content__section content__section--studies"
       v-if="isContentSectionVisible(SectionEnum.STUDIES)"
     >
-      <h1>studies title</h1>
+      <h2>studies title</h2>
       Estamos en la seccion de studies
     </section>
     <section
       class="content__section content__section--hobbies"
       v-if="isContentSectionVisible(SectionEnum.HOBBIES)"
     >
-      <h1>hobbies title</h1>
+      <h2>hobbies title</h2>
       Estamos en la seccion de hobbies
     </section>
     <h2>h2 title</h2>

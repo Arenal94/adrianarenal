@@ -25,8 +25,13 @@
     var icons;
     if (!supportsProperty('fontFeatureSettings')) {
         icons = {
+            'arrowleft': '&#xe902;',
             'developer': '&#xe900;',
             'designer': '&#xe901;',
+            'facebook': '&#xea91;',
+            'instagram': '&#xea92;',
+            'linkedin': '&#xeac9;',
+            'git': '&#xeae7;',
           '0': 0
         };
         delete icons['0'];
