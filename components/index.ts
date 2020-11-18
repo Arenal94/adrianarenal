@@ -1,3 +1,8 @@
+export { default as Main } from './content/main.component.vue'
+export { default as Work } from './content/work.component.vue'
+export { default as Studies } from './content/studies.component.vue'
+export { default as Hobbies } from './content/hobbies.component.vue'
+
 export { default as DesignerTheme } from './designer/designer-theme.component.vue'
 export { default as DesignerSectionList } from './designer/designer-section-list.vue'
 export { default as Character } from './designer/character.component.vue'
@@ -18,7 +23,7 @@ export { default as Shirt } from './designer/clothes/top/shirt.component.vue'
 export { default as BoxingGloves } from './designer/clothes/top/boxing-gloves.component.vue'
 export { default as TShirt } from './designer/clothes/top/t-shirt.component.vue'
 
-
 export { default as DeveloperTheme } from './developer/developer-theme.component.vue'
 
+export { default as IntersectElement } from './intersect-element.component.vue'
 export { default as ThemeSwitch } from './theme-switch.component.vue'
