@@ -1,19 +1,19 @@
 <template>
   <div class="content">
-    <template v-for="section in sections">
-      <intersect-element class="content__intersect-element">
-        <!-- TODO intersect event-->
-        <component
-          :is="getSectionComponent(section)"
-          class="content__section"
-        />
-      </intersect-element>
-    </template>
+    <intersect-element
+      v-for="section in sections"
+      :key="section"
+      class="content__intersect-element"
+      :options="{ threshold: [0.75] }"
+      @intersect="setSection(section)"
+    >
+      <component :is="getSectionComponent(section)" class="content__section" />
+    </intersect-element>
   </div>
 </template>
 
 <script lang="ts">
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
@@ -43,6 +43,9 @@ export default {
     }
   },
   methods: {
+    ...mapMutations({
+      setSection: GENERAL_CONSTS.mutations.setSection
+    }),
     getSectionComponent: function(section: SectionEnum) {
       return {
         [SectionEnum.INTRO]: () => IntroSection,

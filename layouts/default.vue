@@ -2,8 +2,8 @@
   <div class="default-layout">
     <transition name="default-layout__theme--animated" mode="out-in">
       <component
-        class="default-layout__theme"
         :is="selectedThemeComponent"
+        class="default-layout__theme"
         :class="`default-layout__theme--${theme}`"
       />
     </transition>
