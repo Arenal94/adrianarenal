@@ -1,7 +1,7 @@
-export { default as Main } from './content/main.component.vue'
-export { default as Work } from './content/work.component.vue'
-export { default as Studies } from './content/studies.component.vue'
-export { default as Hobbies } from './content/hobbies.component.vue'
+export { default as Intro } from './sections/intro.component.vue'
+export { default as Work } from './sections/work.component.vue'
+export { default as Studies } from './sections/studies.component.vue'
+export { default as Hobbies } from './sections/hobbies.component.vue'
 
 export { default as DesignerTheme } from './designer/designer-theme.component.vue'
 export { default as DesignerSectionList } from './designer/designer-section-list.vue'

@@ -1,4 +1,6 @@
+import { SectionEnum, ThemeEnum } from '~/enums'
+
 export interface GeneralState {
-  theme: string
-  contentSection: string
+  theme: ThemeEnum
+  section: SectionEnum
 }

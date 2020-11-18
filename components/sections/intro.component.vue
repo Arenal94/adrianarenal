@@ -1,6 +1,6 @@
 <template>
-  <section class="main">
-    <h2>main title</h2>
+  <section class="intro">
+    <h2>intro title</h2>
     <p>
       Lorem fistrum llevame al sircoo la caidita a peich torpedo está la cosa
       muy malar te va a hasé pupitaa. Ese que llega te voy a borrar el cerito
@@ -42,7 +42,7 @@
 
 <script lang="ts">
 export default {
-  name: 'main'
+  name: 'intro'
 }
 </script>
 
