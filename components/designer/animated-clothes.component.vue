@@ -10,7 +10,7 @@
       v-for="(item, index) in clothes"
       class="animated-clothes__item"
       :is="item.component"
-      :key="`${contentSection}__${index}`"
+      :key="`${section}__${index}`"
       :data-index="item.index"
     />
   </transition-group>
@@ -35,7 +35,7 @@ import Mortarboard from './clothes/top/mortarboard.component.vue'
 import Shirt from './clothes/top/shirt.component.vue'
 import TShirt from './clothes/top/t-shirt.component.vue'
 
-import { ContentSectionEnum } from '~/enums/content-section.enum'
+import { SectionEnum } from '~/enums/section.enum'
 
 export default {
   name: 'animated-clothes',
@@ -55,11 +55,11 @@ export default {
   },
   computed: {
     ...mapGetters({
-      contentSection: GENERAL_CONSTS.getters.contentSection
+      section: GENERAL_CONSTS.getters.section
     }),
     clothes: function() {
       return {
-        [ContentSectionEnum.MAIN]: () => [
+        [SectionEnum.INTRO]: () => [
           {
             component: 'jeans',
             index: 1
@@ -73,7 +73,7 @@ export default {
             index: 2
           }
         ],
-        [ContentSectionEnum.STUDIES]: () => [
+        [SectionEnum.STUDIES]: () => [
           {
             component: 'elegant-shoes',
             index: 0
@@ -87,7 +87,7 @@ export default {
             index: 2
           }
         ],
-        [ContentSectionEnum.HOBBIES]: () => [
+        [SectionEnum.HOBBIES]: () => [
           {
             component: 'sport-shoes',
             index: 0
@@ -101,7 +101,7 @@ export default {
             index: 2
           }
         ],
-        [ContentSectionEnum.WORK]: () => [
+        [SectionEnum.WORK]: () => [
           {
             component: 'work-jeans',
             index: 1
@@ -115,7 +115,7 @@ export default {
             index: 2
           }
         ]
-      }[this.contentSection]()
+      }[this.section]()
     }
   },
   methods: {

@@ -2,23 +2,21 @@
   <ul class="designer-section-list">
     <li
       class="designer-section-list__item"
-      v-for="contentSection in Object.values(ContentSectionEnum)"
+      v-for="section in Object.values(SectionEnum)"
       :class="{
-        'designer-section-list__item--selected': isContentSectionSelected(
-          contentSection
-        )
+        'designer-section-list__item--selected': isSectionSelected(section)
       }"
-      @click="setContentSection(contentSection)"
+      @click="setSection(section)"
     >
       <span
         class="designer-section-list__text designer-section-list__text--section"
       >
-        {{ getContentSectionLabel(contentSection) }}
+        {{ getSectionLabel(section) }}
       </span>
       <transition name="designer-section-list__icon--animated">
         <span
           class="designer-section-list__icon designer-section-list__icon--arrow adricon"
-          v-show="isContentSectionSelected(contentSection)"
+          v-show="isSectionSelected(section)"
         >
           arrowleft
         </span>
@@ -30,34 +28,35 @@
 <script lang="ts">
 import { mapMutations, mapGetters } from 'vuex'
 
-import { ContentSectionEnum } from '../../enums'
+import { SectionEnum } from '../../enums'
+
 import { GENERAL_CONSTS } from '../../models/store/general/general.consts'
 
 export default {
   name: 'designer-section-list',
   computed: {
     ...mapGetters({
-      contentSection: GENERAL_CONSTS.getters.contentSection
+      section: GENERAL_CONSTS.getters.section
     })
   },
   data() {
     return {
-      ContentSectionEnum
+      SectionEnum
     }
   },
   methods: {
     ...mapMutations({
-      setContentSection: GENERAL_CONSTS.mutations.setContentSection
+      setSection: GENERAL_CONSTS.mutations.setSection
     }),
-    isContentSectionSelected: function(section: ContentSectionEnum): boolean {
-      return this.contentSection === section
+    isSectionSelected: function(section: SectionEnum): boolean {
+      return this.section === section
     },
-    getContentSectionLabel: function(section: ContentSectionEnum): string {
+    getSectionLabel: function(section: SectionEnum): string {
       return {
-        [ContentSectionEnum.MAIN]: () => 'Intro',
-        [ContentSectionEnum.WORK]: () => 'Work',
-        [ContentSectionEnum.STUDIES]: () => 'Studies',
-        [ContentSectionEnum.HOBBIES]: () => 'Hobbies'
+        [SectionEnum.INTRO]: () => 'Intro',
+        [SectionEnum.WORK]: () => 'Work',
+        [SectionEnum.STUDIES]: () => 'Studies',
+        [SectionEnum.HOBBIES]: () => 'Hobbies'
       }[section]()
     }
   }

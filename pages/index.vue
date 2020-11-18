@@ -1,10 +1,10 @@
 <template>
   <div class="content">
-    <template v-for="contentSection in contentSectionsVisible">
+    <template v-for="section in sections">
       <intersect-element class="content__intersect-element">
         <!-- TODO intersect event-->
         <component
-          :is="getContentSectionComponent(contentSection)"
+          :is="getSectionComponent(section)"
           class="content__section"
         />
       </intersect-element>
@@ -17,9 +17,15 @@ import { mapGetters } from 'vuex'
 
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
-import { ContentSectionEnum, ThemeEnum } from '~/enums'
+import { SectionEnum, ThemeEnum } from '~/enums'
 
-import { Hobbies, Main, Studies, Work, IntersectElement } from '~/components'
+import {
+  HobbiesSection,
+  IntroSection,
+  StudiesSection,
+  WorkSection,
+  IntersectElement
+} from '~/components'
 
 export default {
   components: {
@@ -28,22 +34,22 @@ export default {
   computed: {
     ...mapGetters({
       theme: GENERAL_CONSTS.getters.theme,
-      contentSection: GENERAL_CONSTS.getters.contentSection
+      section: GENERAL_CONSTS.getters.section
     }),
-    contentSectionsVisible: function(): ContentSectionEnum[] {
+    sections: function(): SectionEnum[] {
       return this.theme === ThemeEnum
-        ? [this.contentSection]
-        : Object.values(ContentSectionEnum)
+        ? [this.section]
+        : Object.values(SectionEnum)
     }
   },
   methods: {
-    getContentSectionComponent: function(contentSection: ContentSectionEnum) {
+    getSectionComponent: function(section: SectionEnum) {
       return {
-        [ContentSectionEnum.MAIN]: () => Main,
-        [ContentSectionEnum.WORK]: () => Work,
-        [ContentSectionEnum.STUDIES]: () => Studies,
-        [ContentSectionEnum.HOBBIES]: () => Hobbies
-      }[contentSection]()
+        [SectionEnum.INTRO]: () => IntroSection,
+        [SectionEnum.WORK]: () => WorkSection,
+        [SectionEnum.STUDIES]: () => StudiesSection,
+        [SectionEnum.HOBBIES]: () => HobbiesSection
+      }[section]()
     }
   }
 }

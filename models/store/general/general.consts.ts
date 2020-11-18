@@ -1,10 +1,10 @@
 export const GENERAL_CONSTS = {
   getters: {
     theme: 'theme',
-    contentSection: 'contentSection'
+    section: 'section'
   },
   mutations: {
     setTheme: 'setTheme',
-    setContentSection: 'setContentSection'
+    setSection: 'setSection'
   }
 }
