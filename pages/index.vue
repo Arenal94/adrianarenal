@@ -19,7 +19,13 @@ import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
 import { SectionEnum, ThemeEnum } from '~/enums'
 
-import { Hobbies, Intro, Studies, Work, IntersectElement } from '~/components'
+import {
+  HobbiesSection,
+  IntroSection,
+  StudiesSection,
+  WorkSection,
+  IntersectElement
+} from '~/components'
 
 export default {
   components: {
@@ -39,10 +45,10 @@ export default {
   methods: {
     getSectionComponent: function(section: SectionEnum) {
       return {
-        [SectionEnum.INTRO]: () => Intro,
-        [SectionEnum.WORK]: () => Work,
-        [SectionEnum.STUDIES]: () => Studies,
-        [SectionEnum.HOBBIES]: () => Hobbies
+        [SectionEnum.INTRO]: () => IntroSection,
+        [SectionEnum.WORK]: () => WorkSection,
+        [SectionEnum.STUDIES]: () => StudiesSection,
+        [SectionEnum.HOBBIES]: () => HobbiesSection
       }[section]()
     }
   }

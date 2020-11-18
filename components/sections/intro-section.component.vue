@@ -1,5 +1,5 @@
 <template>
-  <section class="intro">
+  <section class="intro-section">
     <h2>intro title</h2>
     <p>
       Lorem fistrum llevame al sircoo la caidita a peich torpedo está la cosa
@@ -42,7 +42,7 @@
 
 <script lang="ts">
 export default {
-  name: 'intro'
+  name: 'intro-section'
 }
 </script>
 

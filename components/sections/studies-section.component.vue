@@ -1,5 +1,5 @@
 <template>
-  <section class="studies">
+  <section class="studies-section">
     <h2>studies title</h2>
     Estamos en la seccion de studies
   </section>
@@ -7,7 +7,7 @@
 
 <script lang="ts">
 export default {
-  name: 'studies'
+  name: 'studies-section'
 }
 </script>
 
