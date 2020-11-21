@@ -1,42 +1,31 @@
 <template>
   <section class="intro-section">
-    <h2>intro title</h2>
+    <h2>Welcome</h2>
     <p>
-      Lorem fistrum llevame al sircoo la caidita a peich torpedo está la cosa
-      muy malar te va a hasé pupitaa. Ese que llega te voy a borrar el cerito
-      diodenoo por la gloria de mi madre no te digo trigo por no llamarte
-      Rodrigor benemeritaar. No puedor no te digo trigo por no llamarte Rodrigor
-      amatomaa quietooor te va a hasé pupitaa al ataquerl caballo blanco caballo
-      negroorl pecador caballo blanco caballo negroorl la caidita. Diodeno ese
-      pedazo de jarl al ataquerl. Caballo blanco caballo negroorl pecador papaar
-      papaar la caidita hasta luego Lucas va usté muy cargadoo hasta luego Lucas
-      pecador. No puedor torpedo condemor torpedo jarl.
+      Hi! I'm Adrian Arenal, a Software Engineer from Pola de Siero (Asturias,
+      Spain).
     </p>
     <p>
-      Lorem fistrum llevame al sircoo la caidita a peich torpedo está la cosa
-      muy malar te va a hasé pupitaa. Ese que llega te voy a borrar el cerito
-      diodenoo por la gloria de mi madre no te digo trigo por no llamarte
-      Rodrigor benemeritaar. No puedor no te digo trigo por no llamarte Rodrigor
-      amatomaa quietooor te va a hasé pupitaa al ataquerl caballo blanco caballo
-      negroorl pecador caballo blanco caballo negroorl la caidita. Diodeno ese
-      pedazo de jarl al ataquerl. Caballo blanco caballo negroorl pecador papaar
-      papaar la caidita hasta luego Lucas va usté muy cargadoo hasta luego Lucas
-      pecador. No puedor torpedo condemor torpedo jarl.
+      One of my favourite things about web development is to animate the
+      interface, making it alive, joyfull or even funny.
     </p>
-    <a>link</a>
-    <blockquote>blockquote</blockquote>
-    <ul>
-      <li>
-        item1
-      </li>
-      <li>
-        item 2
-        <ul>
-          <li>item 2.1</li>
-        </ul>
-      </li>
-      <li>item 3</li>
-    </ul>
+    <p>
+      However, this is not a easy task. Animations must deal with another
+      aspects like UX / UI design!
+    </p>
+    <p>
+      This website was created not only to tell my life but also as an own
+      playground with freedom in what I create.
+    </p>
+    <p>
+      For the ones who have curiosity about the technologies involved in this
+      project, you can visit the repository where I develop this website. Is an
+      open-source project so feel free to see the code or even propose
+      improvements!
+    </p>
+    <p>
+      I hope you enjoy it! Time to scroll !!
+    </p>
   </section>
 </template>
 

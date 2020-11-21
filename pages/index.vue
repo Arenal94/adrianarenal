@@ -66,5 +66,10 @@ export default {
   &__intersect-element {
     min-height: 100%;
   }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>
