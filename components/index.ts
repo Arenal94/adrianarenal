@@ -23,6 +23,8 @@ export { default as Shirt } from './designer/clothes/top/shirt.component.vue'
 export { default as BoxingGloves } from './designer/clothes/top/boxing-gloves.component.vue'
 export { default as TShirt } from './designer/clothes/top/t-shirt.component.vue'
 
+export { default as CardInfo } from './designer/card-info.component.vue'
+
 export { default as DeveloperTheme } from './developer/developer-theme.component.vue'
 
 export { default as IntersectElement } from './intersect-element.component.vue'

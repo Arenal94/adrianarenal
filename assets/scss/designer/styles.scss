@@ -2,7 +2,59 @@
 @import 'vars/fonts';
 @import 'scroll';
 
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul,
+a,
+code {
+  color: $primary-color;
+}
 
+p,
+ul {
+  margin: rem(15px) 0;
+}
+p,
+ul,
+a,
+code {
+  font-family: $font-family--secondary;
+  font-size: $font-size--large;
+}
+
+li {
+  margin: rem(10px) 0;
+}
 h2 {
-  font-size: $font-size--extra-large;
+  margin-bottom: rem(20px);
+  font-size: rem(50px);
+  line-height: 1.14;
+}
+
+h3 {
+  font-size: rem(25px);
+  text-transform: uppercase;
+  letter-spacing: rem(2px);
+  line-height: 1.12;
+}
+
+h4 {
+  font-size: rem(20px);
+}
+
+code {
+  padding: 1px 7px;
+  font-size: $font-size--large;
+  border-radius: 5px;
+  border: solid 1px $grey--1;
+  background-color: $grey--0;
+  letter-spacing: 1px;
+}
+label {
+  font-size: $font-size--large;
+  color: $color--grey;
 }
