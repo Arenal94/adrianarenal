@@ -2,18 +2,6 @@
 @import 'vars/fonts';
 @import 'scroll';
 
-h1,
-h2,
-h3,
-h4,
-h5,
-p,
-ul,
-a,
-code {
-  color: $primary-color;
-}
-
 p,
 ul {
   margin: rem(15px) 0;

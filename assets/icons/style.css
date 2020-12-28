@@ -23,6 +23,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.adricon-minus:before {
+  content: "\e903";
+}
+.adricon-terminal:before {
+  content: "\e906";
+}
+.adricon-arrow-left1:before {
+  content: "\e904";
+}
+.adricon-arrow-down:before {
+  content: "\e905";
+}
 .adricon-arrow-left:before {
   content: "\e902";
 }
@@ -31,6 +43,21 @@
 }
 .adricon-designer:before {
   content: "\e901";
+}
+.adricon-file-text2:before {
+  content: "\e926";
+}
+.adricon-folder:before {
+  content: "\e92f";
+}
+.adricon-cog:before {
+  content: "\e994";
+}
+.adricon-list:before {
+  content: "\e9ba";
+}
+.adricon-notification:before {
+  content: "\ea08";
 }
 .adricon-facebook2:before {
   content: "\ea91";
