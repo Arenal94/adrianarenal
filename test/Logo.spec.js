@@ -1,5 +1,4 @@
-import Logo from '@/components/Logo.vue'
-describe('Logo', () => {
+describe('Dummy test', () => {
   test('is a Vue instance', () => {
     expect(true).toBeTruthy()
   })

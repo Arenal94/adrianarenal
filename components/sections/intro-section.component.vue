@@ -23,9 +23,6 @@
       open-source project so feel free to see the code or even propose
       improvements!
     </p>
-    <p>
-      I hope you enjoy it! Time to scroll !!
-    </p>
   </section>
 </template>
 

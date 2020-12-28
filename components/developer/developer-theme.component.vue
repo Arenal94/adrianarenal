@@ -9,9 +9,7 @@
         </li>
       </ul>
     </header>
-    <main class="developer-theme__content">
-      <nuxt />
-    </main>
+    <nuxt class="developer-theme__content scroll--y" />
     <nav class="developer-theme__project-tools-bar">
       <div>
         <p><span>carpeta</span> 1: Project</p>
@@ -35,19 +33,25 @@
       Tools bar
     </nav>
     <footer class="developer-theme__footer">
-      <p>this is the footer</p>
+      <span>Adrian Arenal © {{ new Date().getFullYear() }}</span>
+      <social-media-list class="developer-theme__social-media-list" />
     </footer>
   </section>
 </template>
 <script lang="ts">
+import SocialMediaList from '~/components/social-media-list.component.vue'
+
 export default {
-  name: 'developer-theme'
+  name: 'developer-theme',
+  components: {
+    SocialMediaList
+  }
 }
 </script>
 
-<style lang="scss" scoped>
-@import 'assets/scss/developer/styles';
+<style lang="scss">
 .developer-theme {
+  @import 'assets/scss/developer/styles';
   display: grid;
   grid-template-areas:
     'header header header header'
@@ -55,9 +59,9 @@ export default {
     'project-tools-bar tools tools tools'
     'tools-bar tools-bar tools-bar tools-bar'
     'footer footer footer footer';
-  grid-auto-rows: rem(30px) auto auto rem(30px) rem(30px);
+  grid-auto-rows: rem(30px) auto rem(200px) rem(30px) rem(30px);
   grid-auto-columns: rem(30px) auto auto auto;
-  min-height: 100vh;
+  height: 100vh;
   font-family: $font-family--primary;
   font-size: $font-size--extra-small;
   color: $primary-color;
@@ -106,7 +110,15 @@ export default {
 
   &__footer {
     grid-area: footer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(5px) rem(10px);
     border-top: 0.25px solid $grey--8;
+  }
+
+  &__social-media-list {
+    font-size: $font-size--regular;
   }
 }
 </style>

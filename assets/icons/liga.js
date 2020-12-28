@@ -25,9 +25,22 @@
     var icons;
     if (!supportsProperty('fontFeatureSettings')) {
         icons = {
+            'minus': '&#xe903;',
+            'terminal': '&#xe906;',
+            'arrowright': '&#xe904;',
+            'arrowdown': '&#xe905;',
             'arrowleft': '&#xe902;',
             'developer': '&#xe900;',
             'designer': '&#xe901;',
+            'file': '&#xe926;',
+            'folder': '&#xe92f;',
+            'directory': '&#xe92f;',
+            'cog': '&#xe994;',
+            'gear': '&#xe994;',
+            'list': '&#xe9ba;',
+            'todo': '&#xe9ba;',
+            'notification': '&#xea08;',
+            'warning': '&#xea08;',
             'facebook': '&#xea91;',
             'instagram': '&#xea92;',
             'linkedin': '&#xeac9;',
