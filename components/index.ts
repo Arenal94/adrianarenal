@@ -28,4 +28,5 @@ export { default as CardInfo } from './designer/card-info.component.vue'
 export { default as DeveloperTheme } from './developer/developer-theme.component.vue'
 
 export { default as IntersectElement } from './intersect-element.component.vue'
+export { default as SocialMediaList } from './social-media-list.component.vue'
 export { default as ThemeSwitch } from './theme-switch.component.vue'
