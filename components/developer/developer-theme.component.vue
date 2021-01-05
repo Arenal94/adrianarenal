@@ -1,14 +1,6 @@
 <template>
   <section class="developer-theme">
-    <header class="developer-theme__header">
-      <ul class="developer-theme__header-breadcumb">
-        <li class="developer-theme__header-breadcumb-item">
-          <p class="developer-theme__text developer-theme__text--breadcumb">
-            <span>icon</span>adrianarenal
-          </p>
-        </li>
-      </ul>
-    </header>
+    <developer-header class="developer-theme__header" />
     <nuxt class="developer-theme__content scroll--y" />
     <nav class="developer-theme__project-tools-bar">
       <div
@@ -41,10 +33,14 @@ import SocialMediaList from '~/components/social-media-list.component.vue'
 import DeveloperToolsBar from '~/components/developer/developer-tools-bar.component.vue'
 import DeveloperTools from '~/components/developer/developer-tools.component.vue'
 import DeveloperProject from '~/components/developer/developer-project.component.vue'
+import Logo from '~/components/logo.component.vue'
+import DeveloperHeader from '~/components/developer/developer-header.component.vue'
 
 export default {
   name: 'developer-theme',
   components: {
+    DeveloperHeader,
+    Logo,
     DeveloperProject,
     DeveloperTools,
     DeveloperToolsBar,

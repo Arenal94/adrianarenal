@@ -2,7 +2,7 @@
   <section class="designer-theme">
     <header class="designer-theme__header">
       <div class="designer-theme__header-content">
-        Hola q tal yo fenomenal
+        <imagotype class="designer-theme__imagotype" />
       </div>
     </header>
     <main class="designer-theme__main-content">
@@ -22,10 +22,14 @@
 import Character from '~/components/designer/character.component.vue'
 import DesignerSectionList from '~/components/designer/designer-section-list.vue'
 import SocialMediaList from '~/components/social-media-list.component.vue'
+import Logo from '~/components/logo.component.vue'
+import Imagotype from '~/components/imagotype.component.vue'
 
 export default {
   name: 'designer-theme',
   components: {
+    Imagotype,
+    Logo,
     Character,
     DesignerSectionList,
     SocialMediaList
@@ -35,6 +39,7 @@ export default {
 <style lang="scss">
 $header-height: 10vh;
 $footer-height: 5vh;
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 
 .designer-theme {
   @import 'assets/scss/designer/styles';
@@ -60,6 +65,11 @@ $footer-height: 5vh;
   }
   &__header-content {
     position: absolute;
+    display: flex;
+    align-items: center;
+    margin-left: rem(10px);
+    width: 100%;
+    height: 100%;
   }
 
   &__main-content {

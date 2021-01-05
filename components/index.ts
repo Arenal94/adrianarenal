@@ -26,10 +26,13 @@ export { default as TShirt } from './designer/clothes/top/t-shirt.component.vue'
 export { default as CardInfo } from './designer/card-info.component.vue'
 
 export { default as DeveloperTheme } from './developer/developer-theme.component.vue'
+export { default as DeveloperHeader } from './developer/developer-header.component.vue'
 export { default as DeveloperProject } from './developer/developer-project.component.vue'
 export { default as DeveloperTools } from './developer/developer-tools.component.vue'
 export { default as DeveloperToolsBar } from './developer/developer-tools-bar.component.vue'
 
+export { default as Logo } from './logo.component.vue'
+export { default as Imagotype } from './imagotype.component.vue'
 export { default as IntersectElement } from './intersect-element.component.vue'
 export { default as SocialMediaList } from './social-media-list.component.vue'
 export { default as ThemeSwitch } from './theme-switch.component.vue'
