@@ -65,6 +65,8 @@ export default {
 
 <style lang="scss" scoped>
 @import 'assets/scss/designer/styles';
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap'); //TODO local font
+
 $flag-container-width: rem(50px);
 $flag-size: rem(20px);
 .designer-section-list {
@@ -86,6 +88,7 @@ $flag-size: rem(20px);
 
   &__text {
     &--section {
+      font-family: 'Major Mono Display', monospace;
       display: flex;
       justify-content: flex-end;
       color: $primary-color;
