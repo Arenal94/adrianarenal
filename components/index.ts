@@ -5,6 +5,7 @@ export { default as HobbiesSection } from './sections/hobbies-section.component.
 
 export { default as DesignerTheme } from './designer/designer-theme.component.vue'
 export { default as DesignerSectionList } from './designer/designer-section-list.vue'
+export { default as DesignerMenu } from './designer/designer-menu.component.vue'
 export { default as Character } from './designer/character.component.vue'
 export { default as AnimatedClothes } from './designer/animated-clothes.component.vue'
 
