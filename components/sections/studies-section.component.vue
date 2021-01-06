@@ -56,7 +56,7 @@ export default {
 <style lang="scss" scoped>
 .studies-section {
   &__card-info {
-    margin-bottom: rem(20px);
+    margin-bottom: rem(30px);
   }
 }
 </style>

@@ -28,7 +28,8 @@ export default {
   methods: {
     getSocialMediaUrl(socialMedia: SocialMediaEnum): string {
       return {
-        [SocialMediaEnum.GITHUB]: 'https://github.com/Arenal94/adrianarenal',
+        [SocialMediaEnum.GITHUB]:
+          'https://github.com/AdrianArenal/adrianarenal',
         [SocialMediaEnum.INSTAGRAM]: 'https://www.instagram.com/adrian_arenal/',
         [SocialMediaEnum.LINKEDIN]:
           'https://www.linkedin.com/in/adrian-arenal-9913b9a5/',
@@ -58,6 +59,10 @@ export default {
     color: white;
     &:not(:first-child) {
       margin-left: rem(5px);
+    }
+
+    &:visited {
+      color: white;
     }
   }
 }

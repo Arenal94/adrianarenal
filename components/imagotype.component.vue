@@ -46,13 +46,25 @@ export default {
       font-size: rem(12px);
     }
   }
-  @media only screen and (max-width: $breakpoint__tablet--max) {
+  @media only screen and (max-width: $breakpoint__small-desktop--max) {
     grid-template-columns: rem(30px) auto;
     grid-column-gap: rem(5px);
 
     &__text {
       &--name {
         font-size: rem(18px);
+      }
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint__small-tablet--max) {
+    &__text {
+      &--name {
+        font-size: rem(16px);
+      }
+
+      &--jobtitle {
+        font-size: rem(10px);
       }
     }
   }

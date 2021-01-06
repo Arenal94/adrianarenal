@@ -6,7 +6,6 @@
       :class="{
         'designer-section-list__item--selected': isSectionSelected(section)
       }"
-      @click="setSection(section)"
     >
       <span
         class="designer-section-list__text designer-section-list__text--section"
@@ -26,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import { mapMutations, mapGetters } from 'vuex'
+import { mapGetters } from 'vuex'
 
 import { SectionEnum } from '../../enums'
 
@@ -45,9 +44,6 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
-      setSection: GENERAL_CONSTS.mutations.setSection
-    }),
     isSectionSelected: function(section: SectionEnum): boolean {
       return this.section === section
     },
@@ -79,10 +75,9 @@ $flag-size: rem(20px);
     display: grid;
     grid-template-columns: 1fr $flag-container-width;
     align-items: center;
-    cursor: pointer;
     transition: opacity $transitions-duration--long;
     &:not(&--selected) {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
 

@@ -80,9 +80,6 @@ export default {
   &__content {
     grid-area: content;
     background-color: $grey--9;
-    > * {
-      max-width: rem(600px);
-    }
   }
 
   &__project {
