@@ -25,9 +25,9 @@
       <p>
         Starting as an internship, I developed the
         <a href="https://www.empathy.co/" target="_blank"
-          >corporative website</a
+          >corporative website.</a
         >
-        . After that, I joined the honorable 'Play' team.
+        After that, I joined the honorable 'Play' team.
       </p>
       <p>Technologies involved</p>
       <ul>
@@ -46,7 +46,8 @@
 </template>
 
 <script lang="ts">
-import CardInfo from '~/components/designer/card-info.component.vue'
+import CardInfo from '~/components/card-info.component.vue'
+
 export default {
   name: 'work-section',
   components: {

@@ -24,8 +24,6 @@ export { default as Shirt } from './designer/clothes/top/shirt.component.vue'
 export { default as BoxingGloves } from './designer/clothes/top/boxing-gloves.component.vue'
 export { default as TShirt } from './designer/clothes/top/t-shirt.component.vue'
 
-export { default as CardInfo } from './designer/card-info.component.vue'
-
 export { default as DeveloperTheme } from './developer/developer-theme.component.vue'
 export { default as DeveloperHeader } from './developer/developer-header.component.vue'
 export { default as DeveloperProject } from './developer/developer-project.component.vue'
@@ -35,5 +33,6 @@ export { default as DeveloperToolsBar } from './developer/developer-tools-bar.co
 export { default as Logo } from './logo.component.vue'
 export { default as Imagotype } from './imagotype.component.vue'
 export { default as IntersectElement } from './intersect-element.component.vue'
+export { default as CardInfo } from './card-info.component.vue'
 export { default as SocialMediaList } from './social-media-list.component.vue'
 export { default as ThemeSwitch } from './theme-switch.component.vue'

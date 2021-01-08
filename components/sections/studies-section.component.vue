@@ -44,7 +44,8 @@
 </template>
 
 <script lang="ts">
-import CardInfo from '~/components/designer/card-info.component.vue'
+import CardInfo from '~/components/card-info.component.vue'
+
 export default {
   name: 'studies-section',
   components: {
