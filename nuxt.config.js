@@ -25,7 +25,8 @@ export default {
    */
   css: [
     '@/assets/scss/reset.scss',
-    '@/assets/scss/resources.scss'
+    '@/assets/scss/resources.scss',
+    '@/assets/scss/default.scss'
   ],
   /*
    ** Plugins to load before mounting the App

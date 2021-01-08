@@ -159,11 +159,12 @@ $footer-height: 5vh;
   &__content {
     display: flex;
     flex-direction: column;
-    > * {
+
+    /deep/ .content__section {
       padding-top: $header-height;
-    }
-    /deep/ .content__section:last-of-type {
-      padding-bottom: $footer-height;
+      &:last-of-type {
+        padding-bottom: $footer-height;
+      }
     }
   }
 

@@ -64,17 +64,17 @@ export default {
   flex-direction: column;
 
   &__intersect-element {
-    display: flex;
     min-height: 100%;
-    padding-left: rem(20px);
-    padding-right: rem(20px);
+    flex-shrink: 0;
   }
 
   &__section {
     display: flex;
     flex-direction: column;
-    flex-shrink: 0;
+    padding-left: rem(20px);
+    padding-right: rem(20px);
     max-width: rem(660px);
+    min-height: 100%;
   }
 }
 </style>

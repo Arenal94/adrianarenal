@@ -5,7 +5,7 @@
     <nav class="developer-theme__project-tools-bar">
       <div
         class="developer-theme__tab developer-theme__tab--project"
-        @click="showProject = true"
+        @click="showProject ? (showProject = false) : (showProject = true)"
         :class="{ 'developer-theme__tab--selected': showProject }"
       >
         <span
@@ -84,7 +84,7 @@ export default {
 
   &__project {
     grid-area: project;
-    width: rem(295px);
+    width: rem(270px);
     border-right: 0.25px solid $grey--8;
   }
 
