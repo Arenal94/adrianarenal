@@ -4,5 +4,6 @@ import { SectionEnum, ThemeEnum } from '~/enums'
 
 export const state = (): GeneralState => ({
   theme: ThemeEnum.DESIGNER,
-  section: SectionEnum.INTRO
+  section: SectionEnum.INTRO,
+  autoScrolling: false
 })
