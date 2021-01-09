@@ -6,6 +6,7 @@
       :class="{
         'designer-section-list__item--selected': isSectionSelected(section)
       }"
+      @click="onSectionClick(section)"
     >
       <span
         class="designer-section-list__text designer-section-list__text--section"
@@ -25,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 import { SectionEnum } from '../../enums'
 
@@ -44,10 +45,18 @@ export default {
     }
   },
   methods: {
-    isSectionSelected: function(section: SectionEnum): boolean {
+    ...mapMutations({
+      setSection: GENERAL_CONSTS.mutations.setSection,
+      setAutoScrolling: GENERAL_CONSTS.mutations.setAutoScrolling
+    }),
+    onSectionClick(section: SectionEnum): void {
+      this.setAutoScrolling(true)
+      this.setSection(section)
+    },
+    isSectionSelected(section: SectionEnum): boolean {
       return this.section === section
     },
-    getSectionLabel: function(section: SectionEnum): string {
+    getSectionLabel(section: SectionEnum): string {
       return {
         [SectionEnum.INTRO]: () => 'Intro',
         [SectionEnum.WORK]: () => 'Work',
@@ -76,6 +85,7 @@ $flag-size: rem(20px);
     grid-template-columns: 1fr $flag-container-width;
     align-items: center;
     transition: opacity $transitions-duration--long;
+    cursor: pointer;
     &:not(&--selected) {
       opacity: 0.6;
     }

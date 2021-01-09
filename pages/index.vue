@@ -3,9 +3,10 @@
     <intersect-element
       v-for="section in sections"
       :key="section"
+      :ref="section"
       class="content__intersect-element"
       :options="{ threshold: [0.75] }"
-      @intersect="setSection(section)"
+      @intersect="!autoScrolling && setSection(section)"
     >
       <component :is="getSectionComponent(section)" class="content__section" />
     </intersect-element>
@@ -26,6 +27,7 @@ import {
   WorkSection,
   IntersectElement
 } from '~/components'
+import { ScrollUtils } from '~/utils/scroll.utils'
 
 export default {
   components: {
@@ -34,25 +36,43 @@ export default {
   computed: {
     ...mapGetters({
       theme: GENERAL_CONSTS.getters.theme,
-      section: GENERAL_CONSTS.getters.section
+      section: GENERAL_CONSTS.getters.section,
+      autoScrolling: GENERAL_CONSTS.getters.autoScrolling
     }),
-    sections: function(): SectionEnum[] {
+    sections(): SectionEnum[] {
       return this.theme === ThemeEnum
         ? [this.section]
         : Object.values(SectionEnum)
+    },
+    selectedSectionElement(): HTMLElement {
+      return this.$refs[this.section][0].$el
     }
   },
   methods: {
     ...mapMutations({
-      setSection: GENERAL_CONSTS.mutations.setSection
+      setSection: GENERAL_CONSTS.mutations.setSection,
+      setAutoScrolling: GENERAL_CONSTS.mutations.setAutoScrolling
     }),
-    getSectionComponent: function(section: SectionEnum) {
+    getSectionComponent(section: SectionEnum) {
       return {
         [SectionEnum.INTRO]: () => IntroSection,
         [SectionEnum.WORK]: () => WorkSection,
         [SectionEnum.STUDIES]: () => StudiesSection,
         [SectionEnum.HOBBIES]: () => HobbiesSection
       }[section]()
+    }
+  },
+  mounted(): void {
+    this.$el.scrollTop = this.selectedSectionElement.offsetTop
+    this.setAutoScrolling(false)
+  },
+  watch: {
+    section: function(): void {
+      if (this.autoScrolling) {
+        ScrollUtils.scrollToElm(this.$el, this.selectedSectionElement, 2, () =>
+          this.setAutoScrolling(false)
+        )
+      }
     }
   }
 }

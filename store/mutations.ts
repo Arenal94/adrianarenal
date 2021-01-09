@@ -8,5 +8,8 @@ export default {
   },
   setSection(state: GeneralState, section: SectionEnum): void {
     state.section = section
+  },
+  setAutoScrolling(state: GeneralState, autoScrolling: boolean): void {
+    state.autoScrolling = autoScrolling
   }
 }

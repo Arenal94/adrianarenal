@@ -8,5 +8,8 @@ export default {
   },
   section(state: GeneralState): SectionEnum {
     return state.section
+  },
+  autoScrolling(state: GeneralState): boolean {
+    return state.autoScrolling
   }
 }

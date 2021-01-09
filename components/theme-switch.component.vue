@@ -47,12 +47,14 @@ export default {
   },
   methods: {
     ...mapMutations({
-      setTheme: GENERAL_CONSTS.mutations.setTheme
+      setTheme: GENERAL_CONSTS.mutations.setTheme,
+      setAutoScrolling: GENERAL_CONSTS.mutations.setAutoScrolling
     }),
     inputChange(inputValue): void {
       const selectedTheme = inputValue.target.checked
         ? ThemeEnum.DEVELOPER
         : ThemeEnum.DESIGNER
+      this.setAutoScrolling(true)
       this.setTheme(selectedTheme)
     }
   }

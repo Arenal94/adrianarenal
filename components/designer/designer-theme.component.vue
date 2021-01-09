@@ -6,24 +6,7 @@
     <client-only>
       <main class="designer-theme__main-content">
         <character class="designer-theme__character" v-if="!isHandheldDevice" />
-        <div
-          class="designer-theme__content-wrapper scroll--y"
-          @scroll="onContentScroll"
-        >
-          <nuxt class="designer-theme__content" />
-          <transition name="designer-theme__scroll-down--animated">
-            <div class="designer-theme__scroll-down" v-if="!contentScrolled">
-              <span
-                class="designer-theme__text designer-theme__text--scroll-down"
-                >Scroll down</span
-              >
-              <span
-                class="designer-theme__icon designer-theme__icon--scroll-down adricon"
-                >arrowdown</span
-              >
-            </div>
-          </transition>
-        </div>
+        <nuxt class="designer-theme__content scroll--y" />
         <designer-section-list
           class="designer-theme__section-list"
           v-if="!isHandheldDevice"
@@ -66,6 +49,8 @@ import Logo from '~/components/logo.component.vue'
 import Imagotype from '~/components/imagotype.component.vue'
 import { DeviceEnum } from '~/enums'
 import DesignerMenu from '~/components/designer/designer-menu.component.vue'
+import { mapGetters } from 'vuex'
+import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
 export default {
   name: 'designer-theme',
@@ -78,6 +63,9 @@ export default {
     SocialMediaList
   },
   computed: {
+    ...mapGetters({
+      autoScrolling: GENERAL_CONSTS.getters.autoScrolling
+    }),
     isHandheldDevice(): boolean {
       if (process.client) {
         return this.$device() <= DeviceEnum.TABLET
@@ -87,13 +75,14 @@ export default {
   },
   data() {
     return {
-      contentScrolled: false,
       menuOpened: false
     }
   },
-  methods: {
-    onContentScroll(event) {
-      this.contentScrolled = event.target.scrollTop > 50
+  watch: {
+    autoScrolling: function() {
+      if (!this.autoScrolling && this.menuOpened) {
+        setTimeout(() => (this.menuOpened = false), 500)
+      }
     }
   }
 }
@@ -159,26 +148,14 @@ $footer-height: 5vh;
   &__content {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
 
     /deep/ .content__section {
       padding-top: $header-height;
       &:last-of-type {
         padding-bottom: $footer-height;
       }
-    }
-  }
-
-  &__scroll-down {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    bottom: $footer-height;
-    left: 50%;
-    animation: up-down 3s infinite;
-
-    &--animated {
-      @include animation--fade-out-in;
     }
   }
 
@@ -265,18 +242,6 @@ $footer-height: 5vh;
     &__header-content {
       height: auto;
       padding-top: rem(5px);
-    }
-  }
-
-  @keyframes up-down {
-    0% {
-      transform: translate3d(-50%, rem(-25px), 0);
-    }
-    50% {
-      transform: translate3d(-50%, 0, 0);
-    }
-    100% {
-      transform: translate3d(-50%, rem(-25px), 0);
     }
   }
 }
