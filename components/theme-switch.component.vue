@@ -4,19 +4,19 @@
       <label
         class="theme-switch__label"
         for="theme-switch-input"
-        :class="{ 'theme-switch__label--selected': selected }"
+        :class="{ 'theme-switch__label--selected': isDeveloperTheme }"
       />
       <span
-        class="theme-switch__option theme-switch__option--left adricon"
-        :class="{ 'theme-switch__option--selected': !selected }"
-      >
-        developer
-      </span>
-      <span
-        class="theme-switch__option theme-switch__option--right adricon"
-        :class="{ 'theme-switch__option--selected': selected }"
+        class="theme-switch__option theme-switch__option--designer adricon"
+        :class="{ 'theme-switch__option--selected': !isDeveloperTheme }"
       >
         designer
+      </span>
+      <span
+        class="theme-switch__option theme-switch__option--developer adricon"
+        :class="{ 'theme-switch__option--selected': isDeveloperTheme }"
+      >
+        developer
       </span>
       <input
         class="theme-switch__input"
@@ -33,30 +33,29 @@ import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
 import { ThemeEnum } from '~/enums'
 
-import { mapMutations } from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   name: 'theme-switch',
-  data: function() {
-    return {
-      selected: false
+  computed: {
+    ...mapGetters({
+      theme: GENERAL_CONSTS.getters.theme
+    }),
+    isDeveloperTheme: function(): boolean {
+      return this.theme === ThemeEnum.DEVELOPER
     }
   },
   methods: {
     ...mapMutations({
-      setTheme: GENERAL_CONSTS.mutations.setTheme
+      setTheme: GENERAL_CONSTS.mutations.setTheme,
+      setAutoScrolling: GENERAL_CONSTS.mutations.setAutoScrolling
     }),
-    inputChange(inputValue) {
-      this.selected = inputValue.target.checked
-    }
-  },
-  watch: {
-    selected: function(selected) {
-      if (selected) {
-        this.setTheme(ThemeEnum.DESIGNER)
-      } else {
-        this.setTheme(ThemeEnum.DEVELOPER)
-      }
+    inputChange(inputValue): void {
+      const selectedTheme = inputValue.target.checked
+        ? ThemeEnum.DEVELOPER
+        : ThemeEnum.DESIGNER
+      this.setAutoScrolling(true)
+      this.setTheme(selectedTheme)
     }
   }
 }
@@ -67,7 +66,7 @@ export default {
   $component-class: &;
   display: flex;
   align-items: center;
-  width: rem(90px);
+  width: rem(110px);
   height: rem(60px);
   padding: rem(5px);
   background-color: rgba(255, 255, 255, 0.2);
@@ -88,8 +87,8 @@ export default {
     align-items: center;
     flex-basis: 50%;
     height: 100%;
-    font-size: $font-size--extra-large;
-    color: $color--grey;
+    font-size: rem(30px);
+    color: #a6b0b5;
     z-index: 1;
     transition: color $transitions-duration;
     &--selected {
@@ -102,7 +101,7 @@ export default {
     width: 50%;
     height: 80%;
     border-radius: rem(20px);
-    background-color: $color--dark-grey-blue;
+    background-color: #243d48;
     transition: transform $transitions-duration;
     &--selected {
       transform: translate3d(100%, 0, 0);

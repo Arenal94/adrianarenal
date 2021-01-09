@@ -1,13 +1,13 @@
 <template>
   <div class="default-layout">
-    <theme-switch class="default-layout__theme-switch" />
     <transition name="default-layout__theme--animated" mode="out-in">
       <component
-        class="default-layout__theme"
         :is="selectedThemeComponent"
+        class="default-layout__theme"
         :class="`default-layout__theme--${theme}`"
       />
     </transition>
+    <theme-switch class="default-layout__theme-switch" />
   </div>
 </template>
 <script lang="ts">
@@ -21,7 +21,9 @@ import { DesignerTheme, DeveloperTheme, ThemeSwitch } from '~/components'
 
 export default {
   name: 'default',
-  components: { ThemeSwitch },
+  components: {
+    ThemeSwitch
+  },
   computed: {
     ...mapGetters({
       theme: GENERAL_CONSTS.getters.theme
@@ -31,11 +33,6 @@ export default {
         [ThemeEnum.DESIGNER]: () => DesignerTheme,
         [ThemeEnum.DEVELOPER]: () => DeveloperTheme
       }[this.theme]()
-    }
-  },
-  data() {
-    return {
-      ThemeEnum: ThemeEnum
     }
   }
 }
@@ -62,10 +59,10 @@ export default {
       &-enter,
       &-leave-to {
         &#{$component-class}__theme {
-          &--designer {
+          &--developer {
             transform: translate3d(100%, 0, 0);
           }
-          &--developer {
+          &--designer {
             transform: translate3d(-100%, 0, 0);
           }
         }

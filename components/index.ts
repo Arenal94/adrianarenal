@@ -1,4 +1,11 @@
+export { default as IntroSection } from './sections/intro-section.component.vue'
+export { default as WorkSection } from './sections/work-section.component.vue'
+export { default as StudiesSection } from './sections/studies-section.component.vue'
+export { default as HobbiesSection } from './sections/hobbies-section.component.vue'
+
 export { default as DesignerTheme } from './designer/designer-theme.component.vue'
+export { default as DesignerSectionList } from './designer/designer-section-list.vue'
+export { default as DesignerMenu } from './designer/designer-menu.component.vue'
 export { default as Character } from './designer/character.component.vue'
 export { default as AnimatedClothes } from './designer/animated-clothes.component.vue'
 
@@ -17,7 +24,15 @@ export { default as Shirt } from './designer/clothes/top/shirt.component.vue'
 export { default as BoxingGloves } from './designer/clothes/top/boxing-gloves.component.vue'
 export { default as TShirt } from './designer/clothes/top/t-shirt.component.vue'
 
-
 export { default as DeveloperTheme } from './developer/developer-theme.component.vue'
+export { default as DeveloperHeader } from './developer/developer-header.component.vue'
+export { default as DeveloperProject } from './developer/developer-project.component.vue'
+export { default as DeveloperTools } from './developer/developer-tools.component.vue'
+export { default as DeveloperToolsBar } from './developer/developer-tools-bar.component.vue'
 
+export { default as Logo } from './logo.component.vue'
+export { default as Imagotype } from './imagotype.component.vue'
+export { default as IntersectElement } from './intersect-element.component.vue'
+export { default as CardInfo } from './card-info.component.vue'
+export { default as SocialMediaList } from './social-media-list.component.vue'
 export { default as ThemeSwitch } from './theme-switch.component.vue'

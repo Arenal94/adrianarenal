@@ -1,111 +1,78 @@
 <template>
   <div class="content">
-    <ul class="content__section-list">
-      <li
-        class="content__section-item"
-        v-for="section in Object.values(SectionEnum)"
-        @click="setContentSection(section)"
-      >
-        {{ section }}
-      </li>
-    </ul>
-    <section v-if="isContentSectionVisible(SectionEnum.MAIN)">
-      <h1>main title</h1>
-      Estamos en la seccion de main
-    </section>
-    <section v-if="isContentSectionVisible(SectionEnum.WORK)">
-      <h1>work title</h1>
-      Estamos en la seccion de work
-    </section>
-    <section v-if="isContentSectionVisible(SectionEnum.STUDIES)">
-      <h1>studies title</h1>
-      Estamos en la seccion de studies
-    </section>
-    <section v-if="isContentSectionVisible(SectionEnum.HOBBIES)">
-      <h1>hobbies title</h1>
-      Estamos en la seccion de hobbies
-    </section>
-    <h2>h2 title</h2>
-    <h3>h3 title</h3>
-    <h4>h4 title</h4>
-    <h5>h5 title</h5>
-    <h6>h6 title</h6>
-    <p>
-      Lorem fistrum llevame al sircoo la caidita a peich torpedo está la cosa
-      muy malar te va a hasé pupitaa. Ese que llega te voy a borrar el cerito
-      diodenoo por la gloria de mi madre no te digo trigo por no llamarte
-      Rodrigor benemeritaar. No puedor no te digo trigo por no llamarte Rodrigor
-      amatomaa quietooor te va a hasé pupitaa al ataquerl caballo blanco caballo
-      negroorl pecador caballo blanco caballo negroorl la caidita. Diodeno ese
-      pedazo de jarl al ataquerl. Caballo blanco caballo negroorl pecador papaar
-      papaar la caidita hasta luego Lucas va usté muy cargadoo hasta luego Lucas
-      pecador. No puedor torpedo condemor torpedo jarl.
-    </p>
-    <p>
-      Lorem fistrum llevame al sircoo la caidita a peich torpedo está la cosa
-      muy malar te va a hasé pupitaa. Ese que llega te voy a borrar el cerito
-      diodenoo por la gloria de mi madre no te digo trigo por no llamarte
-      Rodrigor benemeritaar. No puedor no te digo trigo por no llamarte Rodrigor
-      amatomaa quietooor te va a hasé pupitaa al ataquerl caballo blanco caballo
-      negroorl pecador caballo blanco caballo negroorl la caidita. Diodeno ese
-      pedazo de jarl al ataquerl. Caballo blanco caballo negroorl pecador papaar
-      papaar la caidita hasta luego Lucas va usté muy cargadoo hasta luego Lucas
-      pecador. No puedor torpedo condemor torpedo jarl.
-    </p>
-    <a>link</a>
-    <blockquote>blockquote</blockquote>
-    <ul>
-      <li>
-        item1
-      </li>
-      <li>
-        item 2
-        <ul>
-          <li>item 2.1</li>
-        </ul>
-      </li>
-      <li>item 3</li>
-    </ul>
+    <intersect-element
+      v-for="section in sections"
+      :key="section"
+      :ref="section"
+      class="content__intersect-element"
+      :options="{ threshold: [0.75] }"
+      @intersect="!autoScrolling && setSection(section)"
+    >
+      <component :is="getSectionComponent(section)" class="content__section" />
+    </intersect-element>
   </div>
 </template>
 
 <script lang="ts">
-import { mapMutations, mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 
-import { ContentSectionEnum, ThemeEnum } from '~/enums'
+import { SectionEnum, ThemeEnum } from '~/enums'
+
+import {
+  HobbiesSection,
+  IntroSection,
+  StudiesSection,
+  WorkSection,
+  IntersectElement
+} from '~/components'
+import { ScrollUtils } from '~/utils/scroll.utils'
 
 export default {
-  layout({ app }) {
-    return app.store.getters[GENERAL_CONSTS.getters.theme]
+  components: {
+    IntersectElement
   },
   computed: {
     ...mapGetters({
       theme: GENERAL_CONSTS.getters.theme,
-      contentSection: GENERAL_CONSTS.getters.contentSection
-    })
-  },
-  data() {
-    return {
-      SectionEnum: ContentSectionEnum
-    }
-  },
-  watch: {
-    theme() {
-      window.$nuxt.setLayout(this.theme)
+      section: GENERAL_CONSTS.getters.section,
+      autoScrolling: GENERAL_CONSTS.getters.autoScrolling
+    }),
+    sections(): SectionEnum[] {
+      return this.theme === ThemeEnum
+        ? [this.section]
+        : Object.values(SectionEnum)
+    },
+    selectedSectionElement(): HTMLElement {
+      return this.$refs[this.section][0].$el
     }
   },
   methods: {
     ...mapMutations({
-      setTheme: GENERAL_CONSTS.mutations.setTheme,
-      setContentSection: GENERAL_CONSTS.mutations.setContentSection
+      setSection: GENERAL_CONSTS.mutations.setSection,
+      setAutoScrolling: GENERAL_CONSTS.mutations.setAutoScrolling
     }),
-    isContentSectionVisible(contentSection: ContentSectionEnum): boolean {
-      return (
-        this.theme === ThemeEnum.DESIGNER ||
-        this.contentSection === contentSection
-      )
+    getSectionComponent(section: SectionEnum) {
+      return {
+        [SectionEnum.INTRO]: () => IntroSection,
+        [SectionEnum.WORK]: () => WorkSection,
+        [SectionEnum.STUDIES]: () => StudiesSection,
+        [SectionEnum.HOBBIES]: () => HobbiesSection
+      }[section]()
+    }
+  },
+  mounted(): void {
+    this.$el.scrollTop = this.selectedSectionElement.offsetTop
+    this.setAutoScrolling(false)
+  },
+  watch: {
+    section: function(): void {
+      if (this.autoScrolling) {
+        ScrollUtils.scrollToElm(this.$el, this.selectedSectionElement, 2, () =>
+          this.setAutoScrolling(false)
+        )
+      }
     }
   }
 }
@@ -115,10 +82,19 @@ export default {
 .content {
   display: flex;
   flex-direction: column;
-}
 
-.test {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  &__intersect-element {
+    min-height: 100%;
+    flex-shrink: 0;
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding-left: rem(20px);
+    padding-right: rem(20px);
+    max-width: rem(660px);
+    min-height: 100%;
+  }
 }
 </style>

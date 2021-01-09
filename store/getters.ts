@@ -1,10 +1,15 @@
 import { GeneralState } from '~/models/store/general/general-state'
 
+import { SectionEnum, ThemeEnum } from '~/enums'
+
 export default {
-  theme(state: GeneralState) {
+  theme(state: GeneralState): ThemeEnum {
     return state.theme
   },
-  contentSection(state: GeneralState) {
-    return state.contentSection
+  section(state: GeneralState): SectionEnum {
+    return state.section
+  },
+  autoScrolling(state: GeneralState): boolean {
+    return state.autoScrolling
   }
 }
