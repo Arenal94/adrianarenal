@@ -50,6 +50,8 @@ export default {
     position: absolute;
     top: rem(5px);
     right: rem(5px);
+    width: rem(110px);
+    height: rem(60px);
   }
 
   &__theme {
@@ -71,6 +73,12 @@ export default {
           }
         }
       }
+    }
+  }
+  @media only screen and (max-width: $breakpoint__small-tablet--max) {
+    &__theme-switch {
+      width: rem(85px);
+      height: rem(50px);
     }
   }
 }

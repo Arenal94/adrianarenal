@@ -34,6 +34,7 @@ import DeveloperToolsBar from '~/components/developer/developer-tools-bar.compon
 import DeveloperTools from '~/components/developer/developer-tools.component.vue'
 import DeveloperProject from '~/components/developer/developer-project.component.vue'
 import DeveloperHeader from '~/components/developer/developer-header.component.vue'
+import { DeviceEnum } from '~/enums'
 
 export default {
   name: 'developer-theme',
@@ -44,9 +45,22 @@ export default {
     DeveloperToolsBar,
     SocialMediaList
   },
+  computed: {
+    isHandheldDevice(): boolean {
+      if (process.client) {
+        return this.$device() <= DeviceEnum.TABLET
+      }
+      return false
+    }
+  },
   data() {
     return {
       showProject: true
+    }
+  },
+  mounted(): void {
+    if (this.isHandheldDevice) {
+      this.showProject = false
     }
   }
 }

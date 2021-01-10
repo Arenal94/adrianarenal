@@ -219,7 +219,7 @@ $footer-height: 5vh;
     display: flex;
     align-items: flex-end;
     color: white;
-    padding: rem(5px);
+    padding: rem(2.5px);
     & > *:not(:first-child) {
       margin-left: rem(5px);
     }
@@ -239,7 +239,7 @@ $footer-height: 5vh;
 
     &__header-content {
       height: auto;
-      padding-top: rem(5px);
+      padding-top: rem(2.5px);
     }
   }
 }
