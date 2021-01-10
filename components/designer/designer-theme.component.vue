@@ -98,7 +98,6 @@ $footer-height: 5vh;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   color: $primary-color;
   background-color: $on-primary-color;
   font-family: $font-family--primary;
