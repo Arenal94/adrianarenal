@@ -20,15 +20,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap'); // TODO local font
+$logo-size: rem(40px);
+$logo-size--handheld: rem(30px);
 .imagotype {
   display: grid;
   grid-template-areas: 'logo name' 'logo jobtitle';
-  grid-template-columns: rem(40px) auto;
+  grid-template-columns: $logo-size auto;
   grid-template-rows: auto auto;
   grid-column-gap: rem(10px);
   &__logo {
     grid-area: logo;
+    width: $logo-size;
   }
 
   &__text {
@@ -47,8 +49,12 @@ export default {
     }
   }
   @media only screen and (max-width: $breakpoint__small-desktop--max) {
-    grid-template-columns: rem(30px) auto;
+    grid-template-columns: $logo-size--handheld auto;
     grid-column-gap: rem(5px);
+
+    &__logo {
+      width: $logo-size--handheld; // Safari
+    }
 
     &__text {
       &--name {

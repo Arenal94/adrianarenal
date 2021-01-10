@@ -90,7 +90,6 @@ export default {
 <style lang="scss">
 $header-height: 10vh;
 $footer-height: 5vh;
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 
 .designer-theme {
   $component-class: &;
@@ -98,7 +97,6 @@ $footer-height: 5vh;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   color: $primary-color;
   background-color: $on-primary-color;
   font-family: $font-family--primary;
@@ -151,7 +149,7 @@ $footer-height: 5vh;
     align-items: center;
     flex-grow: 1;
 
-    /deep/ .content__section {
+    .content__section {
       padding-top: $header-height;
       &:last-of-type {
         padding-bottom: $footer-height;
@@ -221,7 +219,7 @@ $footer-height: 5vh;
     display: flex;
     align-items: flex-end;
     color: white;
-    padding: rem(5px);
+    padding: rem(2.5px);
     & > *:not(:first-child) {
       margin-left: rem(5px);
     }
@@ -241,7 +239,7 @@ $footer-height: 5vh;
 
     &__header-content {
       height: auto;
-      padding-top: rem(5px);
+      padding-top: rem(2.5px);
     }
   }
 }

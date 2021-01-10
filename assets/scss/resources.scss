@@ -1,15 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;700&family=Roboto:ital,wght@0,400;0,700;1,300&display=swap');
-
-@import '../icons/style.css';
+@import '../fonts/icons/style.css';
 
 @font-face {
   font-family: 'adrianarenal';
-  src:  url('../icons/fonts/adrianarenal.eot?hjug9l');
-  src:  url('../icons/fonts/adrianarenal.eot?hjug9l#iefix') format('embedded-opentype'),
-  url('../icons/fonts/adrianarenal.ttf?hjug9l') format('truetype'),
-  url('../icons/fonts/adrianarenal.woff?hjug9l') format('woff'),
-  url('../icons/fonts/adrianarenal.svg?hjug9l#adrianarenal') format('svg');
+  src: url('../fonts/icons/fonts/adrianarenal.eot?hjug9l');
+  src: url('../fonts/icons/fonts/adrianarenal.eot?hjug9l#iefix')
+      format('embedded-opentype'),
+    url('../fonts/icons/fonts/adrianarenal.ttf?hjug9l') format('truetype'),
+    url('../fonts/icons/fonts/adrianarenal.woff?hjug9l') format('woff'),
+    url('../fonts/icons/fonts/adrianarenal.svg?hjug9l#adrianarenal')
+      format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
+}
+
+/* baloo-2-regular - latin */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/typography/baloo/baloo-2-v1-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/typography/baloo/baloo-2-v1-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-regular.svg#Baloo2')
+      format('svg'); /* Legacy iOS */
+}
+/* baloo-2-600 - latin */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/typography/baloo/baloo-2-v1-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/typography/baloo/baloo-2-v1-latin-600.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('../fonts/typography/baloo/baloo-2-v1-latin-600.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-600.woff') format('woff'),
+    /* Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-600.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-600.svg#Baloo2')
+      format('svg'); /* Legacy iOS */
+}
+/* baloo-2-500 - latin */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/typography/baloo/baloo-2-v1-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/typography/baloo/baloo-2-v1-latin-500.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('../fonts/typography/baloo/baloo-2-v1-latin-500.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-500.woff') format('woff'),
+    /* Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-500.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-500.svg#Baloo2')
+      format('svg'); /* Legacy iOS */
+}
+/* baloo-2-700 - latin */
+@font-face {
+  font-family: 'Baloo 2';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/typography/baloo/baloo-2-v1-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/typography/baloo/baloo-2-v1-latin-700.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('../fonts/typography/baloo/baloo-2-v1-latin-700.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-700.woff') format('woff'),
+    /* Modern Browsers */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-700.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../fonts/typography/baloo/baloo-2-v1-latin-700.svg#Baloo2')
+      format('svg'); /* Legacy iOS */
+}
+
+/* major-mono-display-regular - latin */
+@font-face {
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/typography/major-mono-display/major-mono-display-v5-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('../fonts/typography/major-mono-display/major-mono-display-v5-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */
+      url('../fonts/typography/major-mono-display/major-mono-display-v5-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('../fonts/typography/major-mono-display/major-mono-display-v5-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('../fonts/typography/major-mono-display/major-mono-display-v5-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('../fonts/typography/major-mono-display/major-mono-display-v5-latin-regular.svg#MajorMonoDisplay')
+      format('svg'); /* Legacy iOS */
 }

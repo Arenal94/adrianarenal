@@ -33,22 +33,34 @@ import SocialMediaList from '~/components/social-media-list.component.vue'
 import DeveloperToolsBar from '~/components/developer/developer-tools-bar.component.vue'
 import DeveloperTools from '~/components/developer/developer-tools.component.vue'
 import DeveloperProject from '~/components/developer/developer-project.component.vue'
-import Logo from '~/components/logo.component.vue'
 import DeveloperHeader from '~/components/developer/developer-header.component.vue'
+import { DeviceEnum } from '~/enums'
 
 export default {
   name: 'developer-theme',
   components: {
     DeveloperHeader,
-    Logo,
     DeveloperProject,
     DeveloperTools,
     DeveloperToolsBar,
     SocialMediaList
   },
+  computed: {
+    isHandheldDevice(): boolean {
+      if (process.client) {
+        return this.$device() <= DeviceEnum.TABLET
+      }
+      return false
+    }
+  },
   data() {
     return {
       showProject: true
+    }
+  },
+  mounted(): void {
+    if (this.isHandheldDevice) {
+      this.showProject = false
     }
   }
 }
@@ -66,7 +78,6 @@ export default {
     'footer footer footer';
   grid-auto-rows: rem(30px) auto rem(200px) rem(30px) rem(30px);
   grid-auto-columns: rem(30px) auto 1fr;
-  height: 100vh;
   font-family: $font-family--primary;
   font-size: $font-size--extra-small;
   color: $primary-color;
