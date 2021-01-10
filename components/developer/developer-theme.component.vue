@@ -33,14 +33,12 @@ import SocialMediaList from '~/components/social-media-list.component.vue'
 import DeveloperToolsBar from '~/components/developer/developer-tools-bar.component.vue'
 import DeveloperTools from '~/components/developer/developer-tools.component.vue'
 import DeveloperProject from '~/components/developer/developer-project.component.vue'
-import Logo from '~/components/logo.component.vue'
 import DeveloperHeader from '~/components/developer/developer-header.component.vue'
 
 export default {
   name: 'developer-theme',
   components: {
     DeveloperHeader,
-    Logo,
     DeveloperProject,
     DeveloperTools,
     DeveloperToolsBar,

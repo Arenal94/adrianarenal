@@ -5,7 +5,7 @@
       :key="section"
       :ref="section"
       class="content__intersect-element"
-      :options="{ threshold: [0.75] }"
+      :options="{ threshold: [0.25] }"
       @intersect="!autoScrolling && setSection(section)"
     >
       <component :is="getSectionComponent(section)" class="content__section" />
