@@ -66,7 +66,6 @@ export default {
     'footer footer footer';
   grid-auto-rows: rem(30px) auto rem(200px) rem(30px) rem(30px);
   grid-auto-columns: rem(30px) auto 1fr;
-  height: 100vh;
   font-family: $font-family--primary;
   font-size: $font-size--extra-small;
   color: $primary-color;

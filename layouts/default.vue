@@ -41,6 +41,9 @@ export default {
 <style lang="scss" scoped>
 .default-layout {
   $component-class: &;
+  position: relative;
+  display: flex;
+  height: 100%;
   overflow: hidden;
 
   &__theme-switch {
@@ -50,6 +53,7 @@ export default {
   }
 
   &__theme {
+    flex-grow: 1;
     overflow: hidden;
     &--animated {
       &-enter-active,
