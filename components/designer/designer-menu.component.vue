@@ -39,5 +39,9 @@ export default {
       transform: translate(0, -50%);
     }
   }
+
+  &__section-list {
+    flex-shrink: 0;
+  }
 }
 </style>

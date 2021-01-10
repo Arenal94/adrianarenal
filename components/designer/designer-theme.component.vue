@@ -149,7 +149,7 @@ $footer-height: 5vh;
     align-items: center;
     flex-grow: 1;
 
-    /deep/ .content__section {
+    .content__section {
       padding-top: $header-height;
       &:last-of-type {
         padding-bottom: $footer-height;
