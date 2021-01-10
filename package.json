@@ -1,7 +1,7 @@
 {
   "name": "adrianarenal",
   "version": "1.0.0",
-  "description": "My personal website with NuxtJs",
+  "description": "My personal website",
   "author": "Adrian Arenal",
   "private": true,
   "scripts": {
