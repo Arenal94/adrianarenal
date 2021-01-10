@@ -28,6 +28,7 @@
         class="developer-project__option developer-project__option--section"
         v-for="sect in Object.values(SectionEnum)"
         :class="{ 'developer-project__option--selected': sect === section }"
+        @click="onSectionClick(sect)"
       >
         <span
           class="developer-project__icon developer-project__icon--file adricon"
@@ -41,7 +42,7 @@
 </template>
 
 <script lang="ts">
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import { GENERAL_CONSTS } from '~/models/store/general/general.consts'
 import { SectionEnum } from '~/enums'
 
@@ -55,6 +56,16 @@ export default {
   data: function() {
     return {
       SectionEnum
+    }
+  },
+  methods: {
+    ...mapMutations({
+      setSection: GENERAL_CONSTS.mutations.setSection,
+      setAutoScrolling: GENERAL_CONSTS.mutations.setAutoScrolling
+    }),
+    onSectionClick(section: SectionEnum) {
+      this.setAutoScrolling(true)
+      this.setSection(section)
     }
   }
 }
@@ -86,6 +97,7 @@ export default {
     padding: rem(5px);
 
     &--section {
+      cursor: pointer;
       padding-left: rem(25px);
     }
     &--selected {
