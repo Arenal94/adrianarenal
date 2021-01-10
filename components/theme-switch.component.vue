@@ -66,8 +66,6 @@ export default {
   $component-class: &;
   display: flex;
   align-items: center;
-  width: rem(110px);
-  height: rem(60px);
   padding: rem(5px);
   background-color: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 rem(11px) 0 rgba(0, 0, 0, 0.15);
