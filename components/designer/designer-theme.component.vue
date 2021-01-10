@@ -90,7 +90,6 @@ export default {
 <style lang="scss">
 $header-height: 10vh;
 $footer-height: 5vh;
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
 
 .designer-theme {
   $component-class: &;

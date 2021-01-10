@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap'); // TODO local font
 .imagotype {
   display: grid;
   grid-template-areas: 'logo name' 'logo jobtitle';
