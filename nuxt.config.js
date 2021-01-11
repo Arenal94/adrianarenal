@@ -23,12 +23,11 @@ export default {
       },
       {
         name: 'og:description',
-        content:
-          'Choose your preferred theme and enjoy finding out some information about me!'
+        content: process.env.npm_package_description || ''
       },
       {
         name: 'og:image',
-        content: '/adrian.jpeg'
+        content: 'https://adrianarenal.dev/adrian.jpeg'
       },
       {
         name: 'og:url',
