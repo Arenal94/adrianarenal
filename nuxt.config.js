@@ -4,6 +4,10 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en',
+      prefix: 'og: http://ogp.me/ns#'
+    },
     title: 'Adrian Arenal',
     meta: [
       { charset: 'utf-8' },
@@ -12,6 +16,23 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'og:title',
+        content: 'Adrian Arenal'
+      },
+      {
+        name: 'og:description',
+        content:
+          'Choose your preferred theme and enjoy finding out some information about me!'
+      },
+      {
+        name: 'og:image',
+        content: '/adrian.jpeg'
+      },
+      {
+        name: 'og:url',
+        content: 'https://adrianarenal.dev'
       },
       {
         name: 'theme-color',
