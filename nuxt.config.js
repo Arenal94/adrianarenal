@@ -18,20 +18,44 @@ export default {
         content: process.env.npm_package_description || ''
       },
       {
-        name: 'og:title',
+        property: 'og:title',
         content: 'Adrian Arenal'
       },
       {
-        name: 'og:description',
+        property: 'og:description',
         content: process.env.npm_package_description || ''
       },
       {
-        name: 'og:image',
+        property: 'og:image',
+        content: 'http://adrianarenal.dev/adrian.jpeg'
+      },
+      {
+        property: 'og:image:secure_url',
         content: 'https://adrianarenal.dev/adrian.jpeg'
       },
       {
-        name: 'og:url',
+        property: 'og:url',
         content: 'https://adrianarenal.dev'
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        name: 'twitter:image',
+        content: 'http://adrianarenal.dev/adrian.jpeg'
+      },
+      {
+        name: 'twitter:description',
+        content: process.env.npm_package_description || ''
+      },
+      {
+        name: 'twitter:site',
+        content: 'AdrianArenal.dev'
+      },
+      {
+        name: 'twitter:creator',
+        content: 'https://twitter.com/adrianarenal94'
       },
       {
         name: 'theme-color',
