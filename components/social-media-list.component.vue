@@ -31,14 +31,13 @@ export default {
         [SocialMediaEnum.GITHUB]:
           'https://github.com/AdrianArenal/adrianarenal',
         [SocialMediaEnum.INSTAGRAM]: 'https://www.instagram.com/adrian_arenal/',
-        [SocialMediaEnum.LINKEDIN]:
-          'https://www.linkedin.com/in/adrian-arenal-9913b9a5/',
+        [SocialMediaEnum.LINKEDIN]: 'https://www.linkedin.com/in/adrian-arenal',
         [SocialMediaEnum.FACEBOOK]: 'https://www.facebook.com/adrian.arenal.9/'
       }[socialMedia]
     },
     getSocialMediaIcon(socialMedia: SocialMediaEnum): string {
       return {
-        [SocialMediaEnum.GITHUB]: 'git',
+        [SocialMediaEnum.GITHUB]: 'github',
         [SocialMediaEnum.INSTAGRAM]: 'instagram',
         [SocialMediaEnum.LINKEDIN]: 'linkedin',
         [SocialMediaEnum.FACEBOOK]: 'facebook'

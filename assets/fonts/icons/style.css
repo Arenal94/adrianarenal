@@ -35,7 +35,7 @@
 .adricon-arrow-down:before {
   content: "\e905";
 }
-.adricon-arrow-left:before {
+.adricon-pointer:before {
   content: "\e902";
 }
 .adricon-developer:before {
@@ -64,6 +64,9 @@
 }
 .adricon-instagram:before {
   content: "\ea92";
+}
+.adricon-github:before {
+  content: "\eab0";
 }
 .adricon-linkedin:before {
   content: "\eac9";
