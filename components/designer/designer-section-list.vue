@@ -15,10 +15,10 @@
       </span>
       <transition name="designer-section-list__icon--animated">
         <span
-          class="designer-section-list__icon designer-section-list__icon--arrow adricon"
+          class="designer-section-list__icon designer-section-list__icon--pointer adricon"
           v-show="isSectionSelected(section)"
         >
-          arrowleft
+          pointer
         </span>
       </transition>
     </li>
@@ -102,7 +102,7 @@ $flag-size: rem(20px);
     }
   }
   &__icon {
-    &--arrow {
+    &--pointer {
       font-size: rem(40px);
       justify-self: center;
     }

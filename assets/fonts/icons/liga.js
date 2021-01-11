@@ -29,7 +29,7 @@
             'terminal': '&#xe906;',
             'arrowright': '&#xe904;',
             'arrowdown': '&#xe905;',
-            'arrowleft': '&#xe902;',
+            'pointer': '&#xe902;',
             'developer': '&#xe900;',
             'designer': '&#xe901;',
             'file': '&#xe926;',
@@ -43,6 +43,8 @@
             'warning': '&#xea08;',
             'facebook': '&#xea91;',
             'instagram': '&#xea92;',
+            'github': '&#xeab0;',
+            'brand40': '&#xeab0;',
             'linkedin': '&#xeac9;',
             'git': '&#xeae7;',
           '0': 0
