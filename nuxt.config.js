@@ -91,7 +91,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources'],
+  modules: ['@nuxtjs/style-resources', '@nuxtjs/sitemap'],
   styleResources: {
     scss: [
       './assets/scss/abstracts/_functions.scss',
@@ -99,6 +99,9 @@ export default {
       './assets/scss/abstracts/_animations.scss',
       './assets/scss/abstracts/_mixins.scss'
     ]
+  },
+  sitemap: {
+    hostname: 'https://adrianarenal.dev',
   },
   /*
    ** Build configuration
